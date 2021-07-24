@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  height: 100vh;
+}
+
+.limited {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.section1 {
+  width: 90%;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  padding: 10px;
+}
+
+.carousel-item > .btn {
+  outline: none !important;
+}
+
+#FeaturedCollection {
+  padding: 10px;
+}
+
+div.carousel-item > h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+  padding: 20px 0 0;
+}
+
+div.carousel-item > p:first-of-type {
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+div.carousel-item > .model-bio {
+  padding: 40px 10px 10px 0;
+}
+
+div.carousel-item > .model-img {
+  float: right;
+  margin-left: 5px;
+}
+
+.btn-wrapper {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.btn-light {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted black;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.icons {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-light > div:first-of-type {
+  margin-left: 10px;
+}
+
+.btn-text {
+  margin-bottom: 0;
+}
