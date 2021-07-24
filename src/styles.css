@@ -28,10 +28,6 @@ body {
   outline: none !important;
 }
 
-#FeaturedCollection {
-  padding: 10px;
-}
-
 div.carousel-item > h1 {
   font-size: 2rem;
   margin-bottom: 0;
@@ -54,7 +50,6 @@ div.carousel-item > .model-img {
 }
 
 .btn-wrapper {
-  width: 95%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -78,6 +73,43 @@ div.carousel-item > .model-img {
   margin-left: 10px;
 }
 
+.btn-light-text {
+  margin-bottom: 0;
+}
+
+/* SECTION RULES */ 
+.section2 {
+  width: 90%;
+  margin: 10px auto;
+  padding: 0;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.fash-brand {
+  font-size: 0.75rem;
+}
+
+s {
+  opacity: 0.5;
+}
+
+.btn-outline-primary:hover {
+  background-color: dodgerblue;
+  color: white;
+}
+
 .btn-text {
+  word-spacing: .05rem;
+  padding: 3px 2px;
+}
+
+img.card-img-top {
+  height: 200px;
+}
+
+div.carousel-indicators {
   margin-bottom: 0;
 }
