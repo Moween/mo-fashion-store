@@ -45,8 +45,8 @@ div.carousel-item > .model-bio {
 }
 
 div.carousel-item > .model-img {
-  float: right;
   margin-left: 5px;
+  height: 300px;
 }
 
 .btn-wrapper {
@@ -102,7 +102,7 @@ s {
 }
 
 .btn-text {
-  word-spacing: .05rem;
+  word-spacing: 0.05rem;
   padding: 3px 2px;
 }
 
@@ -112,4 +112,138 @@ img.card-img-top {
 
 div.carousel-indicators {
   margin-bottom: 0;
+}
+
+/* SECTION 3 */
+.section3 {
+  width: 90%;
+  margin: 20px auto 0;
+  overflow: auto;
+}
+
+.lookbook {
+  margin: auto 0;
+  line-height: 50px;
+  padding: 50px 0;
+  width: 60%;
+}
+
+.lookbook-img {
+  width: 300px;
+  height: 300px;
+}
+
+#footer {
+  border-top: 1px solid gray;
+}
+
+#footer-section01 {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.d05 {
+  color: gray;
+  font-size: 0.75rem;
+  letter-spacing: .08em;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 20px 0 22px;  
+}
+
+.d05:last-of-type {
+  margin-bottom: 0;
+}
+
+.footer-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.ft-li {
+  padding: 0;
+  margin: 5px 5px 5px 0;
+}
+
+.footer-link {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-size: 0.78rem;
+  padding: 0;
+}
+
+#footer-social-icons {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.footer-socialicons {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.social-icon {
+  border: 1px solid #333;
+  background-color: #333;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 5px;
+}
+
+#int01 {
+  float: right;
+}
+
+#int01 a {
+  display: inline-block;
+  color: #999;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 0.78rem;
+}
+
+#subscribe-info {
+  white-space: pre-line;
+  font-size: 0.78rem;
+}
+
+#bottom-list {
+  list-style-type: none;
+  margin: 0 45px 20px 0;    
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.bottom-links {
+  color: #999;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 7px;    
+  padding: 5px;
+}
+
+.bottom-links:hover {
+  color: lime;
+}
+
+.copy2021 {
+  color: #999;
+  width: 40%;
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+form {
+  font-size: 0.75rem;
 }
