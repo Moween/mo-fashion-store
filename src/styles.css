@@ -202,6 +202,7 @@ div.carousel-indicators {
 
 #footer-social-icons {
   margin-top: 120px;
+  color: black;
 }
 
 .footer-socialicons {
@@ -212,27 +213,21 @@ div.carousel-indicators {
 }
 
 .social-icon {
-  border: 1px solid #333;
-  background-color: #333;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
   text-decoration: none;
-  color: #fff;
+  color: black;
   display: block;
-  padding: 5px;
+  margin-top: 0;
+  border-right: 1px solid grey;
 }
 
-#int01 {
-  float: right;
+#fb-icon {
+  border-right: none;
 }
 
-#int01 a {
-  display: inline-block;
-  color: #999;
+.tel {
+  font-size: 0.75rem;
+  color: black;
   text-decoration: none;
-  padding: 5px;
-  font-size: 0.78rem;
 }
 
 #subscribe-info {
