@@ -15,6 +15,15 @@ body {
   margin: 0 auto;
 }
 
+header {
+  width: 100%;
+  border-bottom: 1px dotted black;
+}
+
+.nav-link {
+  font-size: 0.75rem;
+}
+
 .section1 {
   width: 90%;
   margin-top: 20px;
@@ -84,6 +93,19 @@ div.carousel-item > .model-img {
   padding: 0;
 }
 
+div.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.discount-tag {
+  border: 1px solid black;
+  background-color: black;
+  font-size: 0.75rem;
+  color: white;
+  padding: 3px;
+} 
+
 .card-body {
   text-align: center;
 }
@@ -117,8 +139,7 @@ div.carousel-indicators {
 /* SECTION 3 */
 .section3 {
   width: 90%;
-  margin: 20px auto 0;
-  overflow: auto;
+  margin: 70px auto 0;
 }
 
 .lookbook {
@@ -131,6 +152,11 @@ div.carousel-indicators {
 .lookbook-img {
   width: 300px;
   height: 300px;
+}
+
+.quote-bio {
+  white-space: pre-line;
+  padding: 0;
 }
 
 #footer {
@@ -175,13 +201,11 @@ div.carousel-indicators {
 }
 
 #footer-social-icons {
-  text-align: center;
   margin-top: 120px;
 }
 
 .footer-socialicons {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   padding: 0;
   margin: 0;
   list-style-type: none;
