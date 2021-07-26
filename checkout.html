@@ -15,8 +15,142 @@
   <script src="https://kit.fontawesome.com/52e1924adf.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <section class="col-sm-12 col-md-6">
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="col-md-6">
+              <label for="validationCustom01" class="form-label">First name</label>
+              <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="lastname" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="lastname" value="Otto" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="tel" class="form-label">Phone</label>
+              <div class="input-group has-validation">
+                <input type="tel" class="form-control" value="+2348039291997" id="tel" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Please enter phone-number.
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="validationCustom03" class="form-label">City</label>
+              <input type="text" class="form-control" id="validationCustom03" required>
+              <div class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="country" class="form-label">Country</label>
+              <select class="form-select" id="country" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Cameroun</option>
+                <option>Ghana</option>
+                <option>Sierra-Leone</option>
+                <option>Nigeria</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="state" class="form-label">State</label>
+              <select class="form-select" id="state" required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+                <option>Abuja</option>
+                <option>Lagos</option>
+                <option>Owerri</option>
+                <option>Port-Harcourt</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="address" class="form-label">Enter your address</label>
+              <input type="text" class="form-control" id="address" required>
+              <div class="valid-feedback">
+                Please enter a valid address
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="validationCustom05" class="form-label">Zip</label>
+              <input type="number" class="form-control" id="validationCustom05" required>
+              <div class="invalid-feedback">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                  Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+          </form>
+        </section>
+        <section class="col-sm-12 col-md-6">
+          <section>
+            <h3>Shipping Details</h3>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="shipping" id="free-shipping">
+              <label class="form-check-label" for="free-shipping">
+                Free Shipping
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="shipping" id="DHL" checked>
+              <label class="form-check-label" for="DHL">
+                DHL<span>($240.00)</span>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="shipping" id="fedex">
+              <label class="form-check-label" for="fedex">
+                Fedex<span>($140.00)</span>
+              </label>
+            </div>
+          </section>
+          <section>
+            <h3>Payment Method</h3>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="payment" id="cash-on-delivery" checked>
+              <label class="form-check-label" for="cash-on-delivery">
+                Cash on Delivery<span>($240.00)</span>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="payment" id="flutterwave">
+              <label class="form-check-label" for="flutterwave">
+                FlutterWave
+              </label>
+            </div>
+          </section>
+          <section id="order">
+            <h3>Your Order</h3>
 
-  </header>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
