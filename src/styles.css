@@ -38,7 +38,7 @@ header {
 }
 
 div.carousel-item > h1 {
-  font-size: 2rem;
+  font-size: 1.45rem;
   margin-bottom: 0;
   padding: 20px 0 0;
 }
@@ -50,11 +50,12 @@ div.carousel-item > p:first-of-type {
 }
 
 div.carousel-item > .model-bio {
-  padding: 40px 10px 10px 0;
+  padding: 10px 0;
 }
 
 div.carousel-item > .model-img {
-  margin-left: 5px;
+  display: block;
+  width: 100%;
   height: 300px;
 }
 
@@ -93,6 +94,10 @@ div.carousel-item > .model-img {
   padding: 0;
 }
 
+.section2 h3 {
+  text-align: center;
+}
+
 div.row {
   margin-left: 0;
   margin-right: 0;
@@ -104,14 +109,27 @@ div.row {
   font-size: 0.75rem;
   color: white;
   padding: 3px;
-} 
+}
+
+.icon {
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: white;
+  display: block;
+  bottom: 40%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin-right: 4px;
+}
 
 .card-body {
   text-align: center;
 }
 
-.fash-brand {
-  font-size: 0.75rem;
+.brand {
+  font-size: 0.85rem;
 }
 
 s {
@@ -136,22 +154,31 @@ div.carousel-indicators {
   margin-bottom: 0;
 }
 
+#see-more {
+  outline: none;
+  width: 50%;
+}
+
+.w-90 {
+  width: 90%;
+  margin: 0 auto;
+}
+
 /* SECTION 3 */
 .section3 {
   width: 90%;
   margin: 70px auto 0;
+  padding: 20px 0;
+}
+
+.lookbook-img {
+  width: 100%;
+  display: block;
 }
 
 .lookbook {
   margin: auto 0;
-  line-height: 50px;
-  padding: 50px 0;
-  width: 60%;
-}
-
-.lookbook-img {
-  width: 300px;
-  height: 300px;
+  padding: 0;
 }
 
 .quote-bio {
@@ -159,6 +186,7 @@ div.carousel-indicators {
   padding: 0;
 }
 
+/* FOOTER */
 #footer {
   border-top: 1px solid gray;
 }
@@ -201,7 +229,7 @@ div.carousel-indicators {
 }
 
 #footer-social-icons {
-  margin-top: 120px;
+  margin-top: 10px;
   color: black;
 }
 
@@ -265,4 +293,44 @@ div.carousel-indicators {
 
 form {
   font-size: 0.75rem;
+}
+
+/* Media Query */
+@media screen and (min-width: 768px) {
+  div.carousel-item > .model-img {
+    margin-left: 5px;
+    width: 50%;
+    height: 300px;
+  }
+
+  #see-more {
+    width: 25%;
+  }
+
+  .section3 {
+    padding: 40px;
+    background: linear-gradient(pink, white);
+    background-image: url('https://t4.ftcdn.net/jpg/02/62/24/31/360_F_262243135_q7xBjfg02gaeD1NVfIqHBLz3qrOMFYcw.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+  }
+
+  .lookbook-img {
+    display: none;
+  }
+
+  #footer-social-icons {
+    margin: 20px;
+  }  
+}
+
+@media screen and (min-width: 1024px) {
+  div.carousel-item > h1 {
+    font-size: 2rem;
+  }
+
+  div.carousel-item > .model-bio {
+    padding: 40px 10px 10px 0;
+  }
 }
