@@ -303,6 +303,14 @@ form {
     height: 300px;
   }
 
+  .btn-wrapper > div.btn-light:first-of-type {
+    margin-right: 5px;
+  }
+
+  .btn-wrapper > div.btn-light:last-of-type {
+    margin-left: 5px;
+  }
+
   #see-more {
     width: 25%;
   }
