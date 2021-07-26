@@ -121,7 +121,7 @@
                       <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item dropdown col-1">
+                  <li class="nav-item dropdown col-2">
                     <a 
                       class="nav-link dropdown-toggle" 
                       href="#" id="navbarDropdown" 
@@ -140,9 +140,6 @@
                   <li class="nav-item col-2">
                     <a class="nav-link" href="#">About us</a>
                   </li>
-                  <li class="nav-item col-1">
-                    <i class="fa fa-search"></i>
-                  </li>
                   <li class="nav-item col-2">
                     <a class="nav-link" href="#">Contact us</a>
                   </li>
@@ -153,12 +150,14 @@
                       <span class="totalprice"></span>
                     </a>
                   </li>
-                  <li class="nav-item col-2">
+                  <li class="nav-item col-1">
                     <a class="nav-link" href="#">
-                      <i class="fas fa-heart"></i>
-                      Wishlist
-                      <span class="wishlist"></span>
+                      <i class="fas fa-shopping-cart"></i>                      
+                      <span class="cart"></span>
                     </a>
+                    <div class="user-cart">
+
+                    </div>
                   </li>
                 </ul>
                 <!-- <form class="d-flex">
@@ -172,7 +171,7 @@
       </header>
       <main>
         <div class="limited">
-          <section class="section1">
+          <section class="section1 container">
             <div id="FeaturedCollection" 
               class="carousel slide" 
               data-bs-interval="3000" 
@@ -186,7 +185,7 @@
                     src="https://img.freepik.com/free-photo/excited-white-girl-
                     bright-stylish-glasses-posing-pink-dreamy-curly-woman-playing-with-her-ginger
                     -hair-laughing_197531-11045.jpg?size=626&ext=jpg" 
-                    class="d-block w-50 model-img float-md-end float-lg-end " alt="coloured_img"
+                    class="model-img float-md-end float-lg-end " alt="coloured_img"
                   >
                   <h1>Last-minute Gift Guide</h1>
                   <p><strong>UP TO 60% OFF</strong></p>
@@ -194,14 +193,14 @@
                     Pamela is a model, coconut oil enterpreneur + super commuter, with 
                     a carry-on and a spare bed waiting for her in London and New York
                   </p>
-                  <button class="btn btn-dark">Shop Now</button>
+                  <button class="btn btn-dark shop-now">Shop Now</button>
                 </div>
                
                 <div class="carousel-item">
                   <img 
                     src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixid=
                     MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" 
-                    class="d-block w-50 model-img float-md-end float-lg-end" 
+                    class="model-img float-md-end float-lg-end" 
                     alt="pamela-model_img"
                   >
                   <h1>Last-minute Gift Guide</h1>
@@ -210,14 +209,14 @@
                     Pamela is a model, coconut oil enterpreneur + super commuter, with 
                     a carry-on and a spare bed waiting for her in London and New York
                   </p>
-                  <button class="btn btn-dark">Shop Now</button>
+                  <button class="btn btn-dark shop-now">Shop Now</button>
                 </div>
                 
                 <div class="carousel-item">
                   <img 
                     src="https://img.freepik.com/free-photo/three-young-beautiful-smiling-girls-trendy-summer-casual-jeans
                     -clothes-sexy-carefree-women-posing-positive-models-sunglasses_158538-4730.jpg?size=626&ext=jpg" 
-                    class="d-block w-50 model-img float-md-end float-lg-end" 
+                    class="d-block model-img float-md-end float-lg-end" 
                     alt="street_fashion_img"
                   >
                   <h1>Last-minute Gift Guide</h1>
@@ -226,7 +225,7 @@
                     Pamela is a model, coconut oil enterpreneur + super commuter, with 
                     a carry-on and a spare bed waiting for her in London and New York
                   </p>
-                  <button class="btn btn-dark">Shop Now</button>
+                  <button class="btn btn-dark shop-now">Shop Now</button>
                 </div>
               </div>
             </div>
@@ -246,11 +245,11 @@
             </div>
           </section>
     
-          <section class="section2">
-            <h3>Most Popular</h3>
+          <section class="section2 container">
+            <h3 class="text-md-start ps-3">Most Popular</h3>
             <div class="row">
-              <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card" style="width: 15rem;">
+              <div class="col-sm-12 col-md-6 col-lg-3 p-0 mt-4">
+                <div class="card w-90" >
                   <div id="FirstSeller" class="carousel slide" data-bs-ride="false">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#FirstSeller" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -282,19 +281,27 @@
                       </div>
                     </div>
                   </div>
-                  <button class="discount-tag p-1 position-absolute top-0 end-0">-30%</button>
+                  <div class="discount-tag p-1 position-absolute top-0 end-0">-30%</div>
                   <div class="card-body">
-                    <h6 class="fash-brand">Orbie wears</h6>
+                    <h6 class="brand">Orbie wears</h6>
                     <p class="card-text mb-0 p-0">The striped gown</p>
                     <div class="d-flex p-0 justify-content-center">
-                      <p>$100.00</p>
+                      <p >$100.00</p>
                       <p class="ms-2"><s>$130.00</s></p>
                     </div>
+                    <a 
+                      href="#" 
+                      class="icon position-absolute end-0 cart-icon" 
+                      role="button"
+                      data-product="The striped gown"
+                    >
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card" style="width: 15rem;">              
+              <div class="col-sm-12 col-md-6 col-lg-3 p-0 mt-4">
+                <div class="card w-90" >              
                   <div id="SecondSeller" class="carousel slide" data-bs-ride="false">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#SecondSeller" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -327,19 +334,27 @@
                       </div>
                     </div>
                   </div>
-                  <button class="discount-tag p-1 position-absolute top-0 end-0">-44%</button>
+                  <div class="discount-tag p-1 position-absolute top-0 end-0">-44%</div>
                   <div class="card-body">
-                    <h6 class="fash-brand">Chinhu fashion</h6>
+                    <h6 class="brand">Chinhu fashion</h6>
                     <p class="card-text mb-0 p-0">Chiffon top</p>
                     <div class="d-flex justify-content-center">
                       <p>$56.00</p>
                       <p class="ms-2"><s>$100</s></p>
                     </div>
+                    <a 
+                      href="#" 
+                      class="icon position-absolute end-0 cart-icon" 
+                      role="button"
+                      data-product="Chiffon top"
+                    >
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
                   </div>
                 </div>  
               </div>
-              <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card" style="width: 15rem;">              
+              <div class="col-sm-12 col-md-6 col-lg-3 p-0 mt-4">
+                <div class="card w-90" >              
                   <div id="ThirdSeller" class="carousel slide" data-bs-ride="false">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#ThirdSeller" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -372,19 +387,27 @@
                       </div>
                     </div>
                   </div>
-                  <button class="discount-tag p-1 position-absolute top-0 end-0">-30%</button>
+                  <div class="discount-tag p-1 position-absolute top-0 end-0">-30%</div>
                   <div class="card-body">
-                    <h6 class="fash-brand">Lorem collection</h6>
+                    <h6 class="brand">Lorem collection</h6>
                     <p class="card-text mb-0 p-0">Bootcut jean</p>
                     <div class="d-flex justify-content-center">
                       <p>$176.00</p>
                       <p class="ms-2"><s>$350.00</s></p>
                     </div>
+                    <a 
+                      href="#" 
+                      class="icon position-absolute end-0 cart-icon" 
+                      role="button"
+                      data-product="Bootcut jean"
+                    >
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card" style="width: 15rem;">
+              <div class="col-sm-12 col-md-6 col-lg-3 p-0 mt-4">
+                <div class="card w-90" >
                   <div id="FourthSeller" class="carousel slide" data-bs-ride="false">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#FourthSeller" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -416,38 +439,252 @@
                       </div>                
                      </div>              
                   </div>
-                  <button class="discount-tag p-1 position-absolute top-0 end-0">-30%</button>
+                  <div class="discount-tag p-1 position-absolute top-0 end-0">-30%</div>
                   <div class="card-body">
-                    <h6 class="fash-brand">Ipsum fashion</h6>
-                    <p class="card-text mb-0 p-0">Denim Jacket.</p>
+                    <h6 class="brand">Ipsum fashion</h6>
+                    <p class="card-text mb-0 p-0">Denim Jacket</p>
                     <div class="d-flex justify-content-center">
                       <p>$220.00</p>
                       <p class="ms-2"><s>$270.00</s></p>
+                    </div>                
+                    <a 
+                      href="#" 
+                      class="icon position-absolute end-0 cart-icon" 
+                      role="button"
+                      data-product="Denim Jacket"
+                    >
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>              
+            </div>
+            <div class="row d-none mt-5" id="xtra-product-display">
+              <div class="col-sm-12 col-md-6 col-lg-3 p-0 mt-4">
+                <div class="card w-90" >
+                  <div id="FifthSeller" class="carousel slide" data-bs-ride="false">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#FifthSeller" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#FifthSeller" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#FifthSeller" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img 
+                          src="https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/L/a/Ladies-Casual-Wrist-Watch---Dark-Green-4800014.jpg"
+                          class="card-img-top d-block w-100" 
+                          alt="wrist-watch_img"
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img 
+                          src="https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/B/O/142248_1601521842.jpg"
+                          class="card-img-top d-block w-100" 
+                          alt="wrist-watch_img"
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img 
+                          src="https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/S/P/56974_1544465731.jpg"
+                          class="card-img-top d-block w-100" 
+                          alt="wrist-watch_img"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="discount-tag p-1 position-absolute top-0 end-0">-30%</div>
+                  <div class="card-body">
+                    <h6 class="brand">The Jewel</h6>
+                    <p class="card-text mb-0 p-0">Wrist watch</p>
+                    <div class="d-flex p-0 justify-content-center">
+                      <p>$50.00</p>
+                      <p class="ms-2"><s>$80.00</s></p>
+                    </div>
+                    <a 
+                      href="#" 
+                      class="icon position-absolute end-0 cart-icon" 
+                      role="button"
+                      data-product="Wrist watch"
+                    >
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-3 p-0 mt-4">
+                <div class="card w-90" >              
+                  <div id="SixthSeller" class="carousel slide" data-bs-ride="false">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#SixthSeller" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#SixthSeller" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#SixthSeller" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img 
+                          src="https://image.made-in-china.com/202f0j00eSAtCTQJgLGU/Ladies-
+                          Shoes-High-Heels-Women-Shoe-Heels-High-Heels-Platform-Shoes-Girls-Shoes.webp"
+                          class="card-img-top d-block w-100" 
+                          alt="shoe_img"
+                        >
+                      </div>
+                      <div class="carousel-item">
+                        <img 
+                          src="https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/B/H/169158_1583144615.jpg" 
+                          class="card-img-top d-block w-100" 
+                          alt="shoe_img"
+                        >
+                      </div>
+                      <div class="carousel-item">
+                        <img 
+                          src="https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/O/L/169158_1583170292.jpg"
+                          class="card-img-top d-block w-100" 
+                          alt="shoe_img"
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="discount-tag p-1 position-absolute top-0 end-0">-44%</div>
+                  <div class="card-body">
+                    <h6 class="brand">Chinhu fashion</h6>
+                    <p class="card-text mb-0 p-0">Shoe</p>
+                    <div class="d-flex justify-content-center">
+                      <p>$56.00</p>
+                      <p class="ms-2"><s>$100</s></p>
+                    </div>
+                    <a 
+                      href="#" 
+                      class="icon position-absolute end-0 cart-icon" 
+                      role="button"
+                      data-product="Shoe"
+                    >
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
+                  </div>
+                </div>  
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-3 p-0 mt-4">
+                <div class="card w-90" >              
+                  <div id="SeventhSeller" class="carousel slide" data-bs-ride="false">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#SeventhSeller" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#SeventhSeller" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#SeventhSeller" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img 
+                          src="https://d3re0f381bckq9.cloudfront.net/67275984_MzAwLTMwMC04ODE2NjhmMWY3.webp"
+                          class="card-img-top d-block w-100" 
+                          alt="bag_img"
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img 
+                          src="https://d3re0f381bckq9.cloudfront.net/68394699_MzAwLTQwMC1kYjdmYWI5NDdl.webp"
+                          class="card-img-top d-block w-100" 
+                          alt="bag_img"
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img 
+                          src="https://d3re0f381bckq9.cloudfront.net/67292548_MzAwLTMwMC1lNWVjYmZhMzc0.webp"
+                          class="card-img-top d-block w-100" 
+                          alt="bag_img"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="discount-tag p-1 position-absolute top-0 end-0">-30%</div>
+                  <div class="card-body">
+                    <h6 class="brand">Lorem collection</h6>
+                    <p class="card-text mb-0 p-0">Bag</p>
+                    <div class="d-flex justify-content-center">
+                      <p>$176.00</p>
+                      <p class="ms-2"><s>$350.00</s></p>
+                    </div>
+                    <a 
+                      href="#" 
+                      class="icon position-absolute end-0 cart-icon" 
+                      role="button"
+                      data-product="Bag"
+                    >
+                      <i class="fas fa-cart-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-3 p-0 mt-4">
+                <div class="card w-90" >
+                  <div id="EightSeller" class="carousel slide" data-bs-ride="false">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#EightSeller" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#EightSeller" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#EightSeller" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img 
+                          src="https://i.pinimg.com/564x/ac/08/92/ac0892d616e53e723ebdf866015709d0.jpg"
+                          class="card-img-top d-block w-100" 
+                          alt="sports-wear_img"
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img
+                          src="https://i.pinimg.com/236x/97/a3/c0/97a3c0d1bfbb3c38ebde80c07bf11d21.jpg" 
+                          class="card-img-top d-block w-100" 
+                          alt="sports-wear_img"
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img 
+                          src="https://i.pinimg.com/236x/d1/e4/dc/d1e4dc4189af285a7c0a4353e279ec57.jpg"
+                          class="card-img-top d-block w-100" 
+                          alt="sports-wear_img"
+                        />
+                      </div>                
+                     </div>              
+                  </div>
+                  <div class="discount-tag p-1 position-absolute top-0 end-0">-30%</div>
+                  <div class="card-body">
+                    <h6 class="brand">Ipsum fashion</h6>
+                    <p class="card-text mb-0 p-0">Sports Wear.</p>
+                    <div class="d-flex justify-content-center">
+                      <p>$220.00</p>
+                      <p class="ms-2"><s>$270.00</s></p>
+                      <a 
+                        href="#" 
+                        class="icon position-absolute end-0 cart-icon" 
+                        role="button"
+                        data-product="Sports Wear"
+                      >
+                        <i class="fas fa-cart-plus"></i>
+                      </a>
                     </div>                
                   </div>
                 </div>
               </div>
             </div>
+            <button id="see-more" class="btn mt-4 d-block ms-auto me-auto btn-outline-dark">See More</button>
           </section>
     
-          <section class="section3">
+          <section class="section3 container">
             <div>
-              <div class="clearfix">
-                  <img
-                    src="https://stylecaster.com/wp-content/uploads/2019/07/maxi-dress-outfits-14.jpeg"                           
-                    class="d-block w-40 lookbook-img float-md-end float-lg-end" 
-                    alt="lookbook_img"
-                  >
-                  <div class="lookbook">
-                    <p class="m-0">LookBook</p>
-                    <h4 class="mx-0">Summer 2021-2022</h4>
-                    <p class="quote-bio">
-                      Fashion is 30percent clothing and 70 percent attitude.
-                      Give your best Attitude.
-                    </p>
-                    <button class="btn btn-dark">Take a look</button>
-                  </div>
-                </div>
+              <img 
+                class="lookbook-img" 
+                src="https://t4.ftcdn.net/jpg/02/62/24/31/360_F_262243135_q7xBjfg02gaeD1NVfIqHBLz3qrOMFYcw.jpg" 
+                alt="lookbook_img"
+              >
+              <div class="lookbook">
+                <p class="m-0">LookBook</p>
+                <h4 class="mx-0">Summer 2021-2022</h4>
+                <p class="quote-bio">
+                  Fashion is 30percent clothing and 70 percent attitude.
+                  Give your best Attitude.
+                </p>
+                <button class="btn btn-dark">Take a look</button>
+              </div>
             </div>
           </section>
         </div>
@@ -455,21 +692,21 @@
       <footer id="footer"> 
         <div class="limited">
           <section class="row" id="footer-section01">
-            <div class="col-sm-12 col-md-4 me-2 col-lg-3">
+            <div class="col-sm-12 col-md-4 col-lg-3">
               <a class="navbar-brand d-block mt-2" href="#">
                 <img src="./src/images/mo-logo-.jpg" alt="brand_logo" width="100" height="50">
               </a>          
-                <div id="footer-social-icons" class="test-lg-center mt-5">
+                <div id="footer-social-icons" class="test-lg-center">
                   <p class="d05 mb-2 text-md-start">Join Us in Social Networks </p>
                   <ul class="footer-socialicons d-flex justify-content-start">                                       
                       <li class="ft-li">
-                        <a href="#" class="social-icon"><i class="fa fa-instagram pe-4 ps-4"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-instagram pe-2 ps-0"></i></a>
                       </li>
                       <li class="ft-li">
-                        <a href="#" class="social-icon"><i class="fa fa-twitter pe-4 ps-4"></i></a>
+                        <a href="#" class="social-icon"><i class="fa fa-twitter pe-2 ps-2"></i></a>
                       </li>
                       <li class="ft-li">
-                        <a href="#" id="fb-icon" class="social-icon"><i class="fa fa-facebook pe-4 ps-4"></i></a>
+                        <a href="#" id="fb-icon" class="social-icon"><i class="fa fa-facebook pe-2 ps-2"></i></a>
                       </li>
                   </ul>
                   <p class="mb-0">
