@@ -1,0 +1,40 @@
+@import url("./styles.css");
+
+/* .container {
+  width: 90%;
+  margin: 0 auto;
+} */
+
+h2 {
+  font-size: 1.25rem;
+}
+
+.br-bottom {
+  border-bottom: 1px dotted gray;
+}
+
+.info {
+  /* margin-right: 5px; */
+}
+
+#shipping,
+#payment,
+#billing-details,
+#order {
+  padding-left: 0 !important;
+}
+
+.paragrph01 {
+  white-space: pre-line;
+}
+
+.txt-sz {
+  font-size: 0.75rem;
+}
+
+/* MEDIA QUERY */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
