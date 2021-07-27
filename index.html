@@ -294,6 +294,8 @@
                       class="icon position-absolute end-0 cart-icon" 
                       role="button"
                       data-product="The striped gown"
+                      data-bs-toggle="modal" 
+                      data-bs-target="#addedToCart"
                     >
                       <i class="fas fa-cart-plus"></i>
                     </a>
@@ -347,6 +349,8 @@
                       class="icon position-absolute end-0 cart-icon" 
                       role="button"
                       data-product="Chiffon top"
+                      data-bs-toggle="modal" 
+                      data-bs-target="#addedToCart"
                     >
                       <i class="fas fa-cart-plus"></i>
                     </a>
@@ -400,6 +404,8 @@
                       class="icon position-absolute end-0 cart-icon" 
                       role="button"
                       data-product="Bootcut jean"
+                      data-bs-toggle="modal" 
+                      data-bs-target="#addedToCart"
                     >
                       <i class="fas fa-cart-plus"></i>
                     </a>
@@ -452,6 +458,8 @@
                       class="icon position-absolute end-0 cart-icon" 
                       role="button"
                       data-product="Denim Jacket"
+                      data-bs-toggle="modal" 
+                      data-bs-target="#addedToCart"
                     >
                       <i class="fas fa-cart-plus"></i>
                     </a>
@@ -505,6 +513,8 @@
                       class="icon position-absolute end-0 cart-icon" 
                       role="button"
                       data-product="Wrist watch"
+                      data-bs-toggle="modal" 
+                      data-bs-target="#addedToCart"
                     >
                       <i class="fas fa-cart-plus"></i>
                     </a>
@@ -557,6 +567,8 @@
                       class="icon position-absolute end-0 cart-icon" 
                       role="button"
                       data-product="Shoe"
+                      data-bs-toggle="modal" 
+                      data-bs-target="#addedToCart"
                     >
                       <i class="fas fa-cart-plus"></i>
                     </a>
@@ -608,6 +620,8 @@
                       class="icon position-absolute end-0 cart-icon" 
                       role="button"
                       data-product="Bag"
+                      data-bs-toggle="modal" 
+                      data-bs-target="#addedToCart"
                     >
                       <i class="fas fa-cart-plus"></i>
                     </a>
@@ -658,6 +672,8 @@
                         class="icon position-absolute end-0 cart-icon" 
                         role="button"
                         data-product="Sports Wear"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#addedToCart"
                       >
                         <i class="fas fa-cart-plus"></i>
                       </a>
@@ -667,6 +683,25 @@
               </div>
             </div>
             <button id="see-more" class="btn mt-4 d-block ms-auto me-auto btn-outline-dark">See More</button>
+            <section>
+              <div class="modal fade" id="addedToCart" tabindex="-1" aria-labelledby="addedToCartLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addedToCartLabel">Notification</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      This item has been added to cart
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                      <button type="button" class="btn btn-primary">Cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </section>
     
           <section class="section3 container">
