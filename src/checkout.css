@@ -29,12 +29,44 @@ h2 {
   height: 100px;
 }
 
+.product-brand {
+  font-weight: 700;
+}
+
 .paragrph01 {
   white-space: pre-line;
 }
 
-.txt-sz {
+.edit-icons {
+  color: black;
+  border: 1px solid #ccc;
+  background-color: white;
+  display: block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin-right: 4px;
+  padding: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.fa-trash {
+  top: 10px;
+  background-position: center;
   font-size: 0.75rem;
+}
+
+.fa-pen {
+  font-size: 0.75rem;
+  top: 50px;
+}
+
+.txt-sz {
+  font-size: 0.65rem;
+}
+
+.md-txt-sz {
+  font-size: 0.85rem;
 }
 
 /* MEDIA QUERY */
