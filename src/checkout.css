@@ -24,6 +24,11 @@ h2 {
   padding-left: 0 !important;
 }
 
+.order-img {
+  width: 100px;
+  height: 100px;
+}
+
 .paragrph01 {
   white-space: pre-line;
 }
