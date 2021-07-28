@@ -14,7 +14,8 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "radix": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
