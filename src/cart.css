@@ -1,0 +1,12 @@
+@import url('./styles.css');
+@import url('./checkout.css');
+
+#order {
+  max-height: 100vh;
+  padding: 20px;
+}
+
+.order-img {
+  width: 200px;
+  height: 150px;
+}
