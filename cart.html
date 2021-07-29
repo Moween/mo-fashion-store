@@ -11,16 +11,128 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
     crossorigin="anonymous"
   />
+  <script src="https://kit.fontawesome.com/52e1924adf.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./src/cart.css">
 </head>
 <body>
-  <div class="limited">
+  <header id="header">
+    <div class="limited">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./src/images/mo-logo-.jpg" alt="brand_logo" width="100" height="50">
+          </a>              
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav w-75  mb-2  ms-auto mb-lg-0">             
+              <li class="nav-item col-lg-1">
+                <a class="nav-link active" aria-current="page" href="index.html">
+                  <i class="fa fa-home"></i>
+                </a>
+              </li> 
+              <li class="nav-item col-lg-2 dropdown">
+                <a 
+                  class="nav-link dropdown-toggle" 
+                  href="#" id="navbarDropdown" 
+                  role="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false"
+                >
+                  <i class="far fa-question-circle"></i>
+                  Help
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-phone-alt"></i>
+                      0135679824
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-truck"></i>
+                      Shipping & Returns
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Order Cancelation</a></li>
+                </ul>
+              </li>
+              <li class="nav-item col-lg-3 dropdown">
+                <a 
+                  class="nav-link dropdown-toggle" 
+                  href="#" id="navbarDropdown" 
+                  role="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+                  New Arrivals
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li class="nav-item dropdown">
+                    <a 
+                      class="dropdown-item dropdown-toggle" 
+                      href="#" id="navbarDropdown" 
+                      role="button" 
+                      data-bs-toggle="dropdown" 
+                      aria-expanded="false">
+                      Brands
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li> 
+                </ul>
+              </li>
+              <li class="nav-item col-lg-2 me-2 dropdown">
+                <a 
+                  class="nav-link dropdown-toggle" 
+                  href="#" id="navbarDropdown" 
+                  role="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+                  <i class="fas fa-user"></i>
+                  Account
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Sign in</a></li>
+                  <li><a class="dropdown-item" href="#">Log out</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-credit-card"></i>
+                      Gift Cards
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item col-lg-2">
+                <a class="nav-link" href="cart.html">
+                  <i class="fas fa-shopping-cart"></i>                      
+                  Cart
+                </a>
+                <div class="user-cart">
+
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="limited">
     <div class="container">
       <section id="order" class="p-4">
-        <h2>Your Order</h2>
+        <h1 class="mt-0 mb-4 pt-0 ps-3"><b>Your Order</b></h1>
         <div class="order-details pt-3 row br-bottom">              
         </div>
-        <p class="total text-end">Item Total - <span class="total-price"></span></p> 
+        <p class="total text-end d-none">Item Total - <span class="total-price"></span></p> 
         <div>
           <button id="buy-now" 
           class="btn btn-outline-primary"
@@ -30,7 +142,78 @@
         </div> 
       </section>
     </div>
-  </div>
+  </main>
+  <footer id="footer"> 
+    <div class="limited">
+      <section class="row" id="footer-section01">
+        <div class="col-sm-12 col-md-4 col-lg-3">
+          <a class="navbar-brand d-block mt-2" href="#">
+            <img src="./src/images/mo-logo-.jpg" alt="brand_logo" width="100" height="50">
+          </a>          
+            <div id="footer-social-icons" class="test-lg-center">
+              <p class="d05 mb-2 text-md-start">Join Us in Social Networks </p>
+              <ul class="footer-socialicons d-flex justify-content-start">                                       
+                  <li class="ft-li">
+                    <a href="#" class="social-icon"><i class="fa fa-instagram pe-2 ps-0"></i></a>
+                  </li>
+                  <li class="ft-li">
+                    <a href="#" class="social-icon"><i class="fa fa-twitter pe-2 ps-2"></i></a>
+                  </li>
+                  <li class="ft-li">
+                    <a href="#" id="fb-icon" class="social-icon"><i class="fa fa-facebook pe-2 ps-2"></i></a>
+                  </li>
+              </ul>
+              <p class="mb-0">
+                <a class="tel" href="#">
+                  <i class="fas fa-phone-alt"></i>
+                  013457890
+                </a>
+              </p>
+              <span class="copy2021">
+                &copy 2021 Fashion Store NG
+              </span>
+            </div>
+        </div>
+        <div class="col-sm-12 d-md-none d-lg-block col-lg-2">
+          <dl class="footer-list">
+            <dt class="d05">Menu</dt>
+            <dd class="ft-li"><a href="" class="footer-link">Home</a></dd>
+            <dd class="ft-li"><a href="" class="footer-link">New Arrivals</a></dd>
+            <dd class="ft-li"><a href="" class="footer-link">Categories</a> </dd>
+            <dd class="ft-li"><a href="#" class="footer-link">Sales</a></dd>
+            <dd class="ft-li"><a href="#" class="footer-link">Brands</a></dd>
+            <dd class="ft-li"><a href="#" class="footer-link">Sport</a></dd>
+            <dd class="ft-li"><a href="#" class="footer-link">Blog</a></dd>
+          </dl>
+        </div>
+        <div class="col-sm-12 col-md-4 me-lg-2 col-lg-2">
+          <dl class="footer-list">
+              <dt class="d05">Information</dt>
+              <dd class="ft-li"><a href="#" class="footer-link">Terms & Conditions</a></dd>
+              <dd class="ft-li"><a href="#" class="footer-link">FAQ</a></dd>
+              <dd class="ft-li"><a href="#" class="footer-link">Authenticity</a></dd>
+              <dd class="ft-li"><a href="#" class="footer-link">Delivery & Returns</a></dd>
+              <dd class="ft-li"><a href="#" class="footer-link">Gift Card</a></dd>
+          </dl>
+        </div>
+        <div class="col-sm-12 col-md-4  ms-md-0 ms-lg-4 col-lg-4">
+          <div class="footer-list">
+            <h6 class="d05">Subscription</h6>
+            <p id="subscribe-info">
+              Subscribe to the newsletter
+              from and get the latest news 
+              promotions and the box
+            </p>
+            <form action="">
+              <label for="mail d-block">Enter Your E-mail</label><br />
+              <input type="email" id="mail" placeholder="e.g mail@mail.com"/><br />
+              <button type="submit" class="btn-xs mt-3 p-1 btn-outline-dark">Subscribe</button>
+            </form>                              
+          </div>
+        </div>
+      </section>
+    </div>       
+  </footer>
   <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
