@@ -29,6 +29,7 @@ const handleAddToCart = (e) => {
     price: cardContainer.querySelector('.price').innerText,
     prevPrice: cardContainer.querySelector('.prev-price').innerText,
     productName: cardContainer.querySelector('.card-text').innerText,
+    quantity: 1
   };
 
   saveToLocalStorage(product);
@@ -83,7 +84,7 @@ class Order {
     minusBtn.onclick = this.handleDecrementQty;
     const numOfItems = document.createElement('span');
     numOfItems.classList = 'num-of-items btn-dark pe-2 ps-2';
-    numOfItems.textContent = '1';
+    numOfItems.textContent = product.quantity;
     btnContainer.append(plusBtn, numOfItems, minusBtn);
     qtyContainer.append(qtyHeading, btnContainer);
     const itemSize = document.createElement('div');
@@ -133,6 +134,7 @@ class Order {
     let qtyOfProduct = document.querySelector('.num-of-items').textContent;
     qtyOfProduct = parseInt(qtyOfProduct);
     qtyOfProduct += 1;
+    updateProductQty(qtyOfProduct);
     // Fix this bug later
     document.querySelectorAll('.num-of-items').forEach((elem) => elem.textContent = qtyOfProduct);
     calculateTotalPrice();
@@ -160,6 +162,17 @@ const displayOrder = (cart) => {
   });
   calculateTotalPrice();
 };
+
+const updateProductQty = (qty) => {
+  let userCart = localStorage.getItem('userCart');
+  userCart = JSON.parse(userCart);
+  userCart = userCart.map((item) => {
+    item.quantity = qty
+    return item;
+  });
+  userCartCopy = [...userCart];
+  localStorage.setItem('userCart', JSON.stringify(userCart));
+}
 
 const calculateTotalPrice = () => {
   document.querySelector('.total-price').innerHTML = '';
@@ -190,7 +203,14 @@ const calculateTotalPrice = () => {
   document.querySelector('.total-price').textContent = `$${totalPrice}.00`;
 };
 
+const handlePageSwitch = (currWindow, newWindow) => {
+  console.log('clicked')
+  const url = window.location.href.replace(currWindow, newWindow);
+  window.location.href = url;
+}
+
 window.onload = () => {
+  const cartBtn = document.querySelector('.modal-footer > .btn-primary');
   if (addToCartIcons) {
     addToCartIcons.forEach((cartIcon) => {
       cartIcon.addEventListener('click', handleAddToCart);
@@ -199,6 +219,18 @@ window.onload = () => {
 
   if (seeMoreBtn) {
     seeMoreBtn.addEventListener('click', handleSeeMore);
+  }
+
+
+  if(cartBtn) {
+    cartBtn.addEventListener('click', () => 
+      handlePageSwitch('index.html', 'cart.html'));
+  }
+
+  if(document.getElementById('buy-now')) {
+    document.getElementById('buy-now').addEventListener('click', () => {
+      handlePageSwitch('cart.html', 'checkout.html');
+    });
   }
 
   let userCart = localStorage.getItem('userCart');
@@ -210,5 +242,7 @@ window.onload = () => {
     userCart = [];
     localStorage.setItem('userCart', JSON.stringify(userCart));
   }
+  
   displayOrder(userCartCopy);
+
 };
