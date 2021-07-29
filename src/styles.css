@@ -8,6 +8,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
   height: 100vh;
+  background-color: whitesmoke;
 }
 
 .limited {
@@ -15,13 +16,10 @@ body {
   margin: 0 auto;
 }
 
-header {
+#header {
   width: 100%;
-  border-bottom: 1px dotted black;
-}
-
-.nav-link {
-  font-size: 0.75rem;
+  border-bottom: 1px dotted gray;
+  background-color: white;
 }
 
 .section1 {
@@ -167,9 +165,8 @@ div.carousel-indicators {
 
 /* SECTION 3 */
 .section3 {
-  width: 90%;
-  margin: 70px auto 0;
-  padding: 20px 0;
+  background-color: red;
+  margin: 70px 0;
 }
 
 .lookbook-img {
@@ -179,7 +176,7 @@ div.carousel-indicators {
 
 .lookbook {
   margin: auto 0;
-  padding: 0;
+  padding: 0 30px;
 }
 
 .quote-bio {
@@ -189,6 +186,7 @@ div.carousel-indicators {
 
 /* FOOTER */
 #footer {
+  background-color: white;
   border-top: 1px solid gray;
 }
 
@@ -317,12 +315,9 @@ form {
   }
 
   .section3 {
-    padding: 40px;
-    background: linear-gradient(pink, white);
-    background-image: url('https://t4.ftcdn.net/jpg/02/62/24/31/360_F_262243135_q7xBjfg02gaeD1NVfIqHBLz3qrOMFYcw.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: white;
+    width: 100%;
+    background: linear-gradient(pink, mistyrose);
+    padding: 20px 0;
   }
 
   .lookbook-img {
@@ -331,7 +326,8 @@ form {
 
   #footer-social-icons {
     margin: 20px;
-  }  
+  }
+
 }
 
 @media screen and (min-width: 1024px) {
