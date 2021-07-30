@@ -77,6 +77,7 @@ class ProductCard {
     product.id = `P${Date.now()}`;
     product.imageUrl = image.children[0].currentSrc;
     saveToLocalStorage(product);
+    updateCartBadge();
     displayOrder(userCartCopy);
   }
 }
