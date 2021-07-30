@@ -99,6 +99,7 @@ class Order {
     // Reset Local Storage
     localStorage.setItem('userCart', JSON.stringify(userCart));
 
+    updateCartBadge();
     displayOrder(userCartCopy);
   }
 
@@ -145,6 +146,7 @@ const displayOrder = (cart) => {
     checkoutBtn.style.display = 'none';
     document.querySelector('.no-item-msg').classList.remove('d-none');
   }
+  updateCartBadge();
 };
 
 const updateProductQty = (qty) => {
@@ -195,6 +197,14 @@ const handlePageSwitch = (currentUrl, newUrl) => {
   window.location.href = url;
 };
 
+const updateCartBadge = () => {
+  const badge = document.querySelector('.badge');
+  if(userCartCopy.length > 0) {
+    badge.textContent = userCartCopy.length;
+    badge.classList.remove('d-none');    
+  }
+}
+
 window.onload = () => {
   const cartBtn = document.querySelector('.modal-footer > .btn-primary');
   const seeMoreBtn = document.getElementById('see-more');
@@ -230,7 +240,8 @@ window.onload = () => {
   } else {
     userCart = [];
     localStorage.setItem('userCart', JSON.stringify(userCart));
-  }
+  } 
 
+  updateCartBadge();
   displayOrder(userCartCopy);
 };
