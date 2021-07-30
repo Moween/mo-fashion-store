@@ -15,116 +15,103 @@
   <script src="https://kit.fontawesome.com/52e1924adf.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <div class="limited">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="./src/images/mo-logo-.jpg" alt="brand_logo" width="100" height="50">
-          </a>              
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav w-75  mb-2  ms-auto mb-lg-0">             
-              <li class="nav-item col-lg-1">
-                <a class="nav-link active" aria-current="page" href="index.html">
-                  <i class="fa fa-home"></i>
-                </a>
-              </li> 
-              <li class="nav-item col-lg-2 dropdown">
-                <a 
-                  class="nav-link dropdown-toggle" 
-                  href="#" id="navbarDropdown" 
-                  role="button" 
-                  data-bs-toggle="dropdown" 
-                  aria-expanded="false"
-                >
-                  <i class="far fa-question-circle"></i>
-                  Help
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <i class="fas fa-phone-alt"></i>
-                      0135679824
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <i class="fas fa-truck"></i>
-                      Shipping & Returns
-                    </a>
-                  </li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Order Cancelation</a></li>
-                </ul>
-              </li>
-              <li class="nav-item col-lg-3 dropdown">
-                <a 
-                  class="nav-link dropdown-toggle" 
-                  href="#" id="navbarDropdown" 
-                  role="button" 
-                  data-bs-toggle="dropdown" 
-                  aria-expanded="false">
-                  New Arrivals
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li class="nav-item dropdown">
-                    <a 
-                      class="dropdown-item dropdown-toggle" 
-                      href="#" id="navbarDropdown" 
-                      role="button" 
-                      data-bs-toggle="dropdown" 
-                      aria-expanded="false">
-                      Brands
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li> 
-                </ul>
-              </li>
-              <li class="nav-item col-lg-2 me-2 dropdown">
-                <a 
-                  class="nav-link dropdown-toggle" 
-                  href="#" id="navbarDropdown" 
-                  role="button" 
-                  data-bs-toggle="dropdown" 
-                  aria-expanded="false">
-                  <i class="fas fa-user"></i>
-                  Account
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Sign in</a></li>
-                  <li><a class="dropdown-item" href="#">Log out</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <i class="fas fa-credit-card"></i>
-                      Gift Cards
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item col-lg-2">
-                <a class="nav-link" href="#">
-                  <i class="fas fa-shopping-cart"></i>                      
-                  Cart
-                </a>
-                <div class="user-cart">
+  <header id="header">
+    <nav class="navbar limited navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./src/images/mo-logo-.jpg" alt="brand_logo" width="100" height="50">
+        </a>              
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav w-100 mb-2  mb-lg-0">             
+            <li class="nav-item  p-2">
+              <a class="nav-link active" aria-current="page" href="index.html">
+                <i class="fa fa-home"></i>
+                Home
+              </a>
+            </li> 
+            <li class="nav-item p-2 dropdown">
+              <a 
+                class="nav-link dropdown-toggle" 
+                href="#" id="navbarDropdown" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+              >
+                <i class="far fa-question-circle"></i>
+                Help
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-phone-alt"></i>
+                    0135679824
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-truck"></i>
+                    Shipping & Returns
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Order Cancelation</a></li>
+              </ul>
+            </li>
+            <li class="nav-item p-2 dropdown">
+              <a 
+                class="nav-link dropdown-toggle" 
+                href="#" id="navbarDropdown" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+                Brands
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">                  
+                <li><a class="nav-item dropdown-item" href="#">Orbie Wears</a></li>
+                <li><a class="nav-item dropdown-item" href="#">Ipsum Fashion</a></li>
+                <li><a class="nav-item dropdown-item" href="#">Lorem Collection</a></li>
+                <li><a class="nav-item dropdown-item" href="#">Nike</a></li>
+                <li><a class="nav-item dropdown-item" href="#">Adidas</a></li>
+                <li><a class="nav-item dropdown-item" href="#">Pams$Mo</a></li>
+                <li><a class="nav-item dropdown-item" href="#">StellaYedia</a></li>                      
+              </ul>
+            </li>
+            <li id="nav-item-account" class="nav-item  p-2 dropdown">
+              <a 
+                class="nav-link dropdown-toggle" 
+                href="#" id="navbarDropdown" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+                <i class="fas fa-user"></i>
+                Account
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Sign in</a></li>
+                <li><a class="dropdown-item" href="#">Log out</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-credit-card"></i>
+                    Gift Cards
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item p-2">
+              <a class="nav-link" href="cart.html">
+                <i class="fas fa-shopping-cart"></i>                      
+              </a>
+              <div class="user-cart">
 
-                </div>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
   <main>
     <div class="container overflow-hidden">
@@ -383,6 +370,8 @@
     crossorigin="anonymous"
   >
   </script>
+  <script src="./src/variables.js"></script>
+  <script src="./src/cards.js"></script>
   <script src="./src/script.js"></script>
 </body>
 </html>
