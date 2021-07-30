@@ -15,7 +15,9 @@
     "no-param-reassign": "off",
     "eol-last": "off",
     "no-use-before-define": "off",
-    "radix": "off"
+    "radix": "off",
+    "no-unused-vars": "off",
+    "no-undef": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
