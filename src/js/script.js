@@ -1,8 +1,7 @@
 // Global Variables
-const seeMoreBtn = document.getElementById('see-more');
-const addToCartIcons = document.querySelectorAll('button[data-product]');
-const orderDetails = document.querySelector('.order-details');
-const total = document.querySelector('.total');
+const orderDetailsElem = document.querySelector('.order-details');
+const totalElem = document.querySelector('.total');
+// Local Storage Copy
 let userCartCopy = [];
 
 const handleSeeMore = (e) => {
@@ -11,29 +10,6 @@ const handleSeeMore = (e) => {
   const secondRow = document.querySelector('#xtra-product-display');
   secondRow.classList.toggle('d-md-flex');
   btn.innerHTML = (btn.innerHTML === 'See More') ? 'See Less' : 'See More';
-};
-
-const handleAddToCart = (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-
-  const { target: btn } = e;
-  const cardContainer = btn.parentNode;
-  const imageSlider = cardContainer.offsetParent.childNodes[1].children[1];
-  const image = imageSlider.querySelector('.active');
-
-  const product = {
-    id: `P${Date.now()}`,
-    brandName: cardContainer.querySelector('.brand').innerText,
-    imageUrl: image.children[0].currentSrc,
-    price: cardContainer.querySelector('.price').innerText,
-    prevPrice: cardContainer.querySelector('.prev-price').innerText,
-    productName: cardContainer.querySelector('.card-text').innerText,
-    quantity: 1
-  };
-
-  saveToLocalStorage(product);
-  displayOrder(userCartCopy);
 };
 
 const saveToLocalStorage = (item) => {
@@ -47,7 +23,7 @@ const saveToLocalStorage = (item) => {
 class Order {
   constructor(product) {
     this.productImg = document.createElement('div');
-    this.productImg.classList = 'col-sm-12 col-md-3';
+    this.productImg.classList = 'col-sm-12 col-md-3 p-0';
     this.productImg.innerHTML = `
       <img 
         class="order-img float-start" 
@@ -55,7 +31,8 @@ class Order {
         alt=${product.productName}_img
       >`;
     this.productDetails = document.createElement('div');
-    this.productDetails.classList = 'col-sm-12 col-md-9  pb-4 position-relative';
+    this.productDetails.id = 'order-details-container';
+    this.productDetails.classList = 'col-sm-12 col-md-8  p-0 mb-4 position-relative';
     this.productDetails.innerHTML = `
       <h6 class="product-brand">${product.brandName}</h6>
       <p>Product Code:<u>${product.id}</u></p>
@@ -77,13 +54,13 @@ class Order {
     const plusBtn = document.createElement('span');
     plusBtn.classList = 'plus-icon me-2';
     plusBtn.innerText = '+';
-    plusBtn.onclick = this.handleIncrementQty;
+    plusBtn.onclick = (e) => this.handleIncrementQty(e, product.id);
     const minusBtn = document.createElement('span');
     minusBtn.classList = 'minus-icon ms-2';
     minusBtn.innerText = '-';
-    minusBtn.onclick = this.handleDecrementQty;
+    minusBtn.onclick = (e) => this.handleDecrementQty(e, product.id);
     const numOfItems = document.createElement('span');
-    numOfItems.classList = 'num-of-items btn-dark pe-2 ps-2';
+    numOfItems.classList = `${product.id} num-of-items btn-dark pe-2 ps-2`;
     numOfItems.textContent = product.quantity;
     btnContainer.append(plusBtn, numOfItems, minusBtn);
     qtyContainer.append(qtyHeading, btnContainer);
@@ -127,108 +104,127 @@ class Order {
 
   handleEdit = (e) => {
     e.stopPropagation();
+    handlePageSwitch('checkout.html', 'product.html');
   }
 
-  handleIncrementQty = (e) => {
+  handleIncrementQty = (e, productId) => {
     e.stopPropagation();
-    let qtyOfProduct = document.querySelector('.num-of-items').textContent;
-    qtyOfProduct = parseInt(qtyOfProduct);
-    qtyOfProduct += 1;
+    let qtyOfProduct = document.querySelector(`.${productId}`).textContent;
+    qtyOfProduct = parseInt(qtyOfProduct) + 1;
     updateProductQty(qtyOfProduct);
-    // Fix this bug later
-    document.querySelectorAll('.num-of-items').forEach((elem) => elem.textContent = qtyOfProduct);
+    document.querySelector(`.${productId}`).textContent = qtyOfProduct;
     calculateTotalPrice();
   }
 
-  handleDecrementQty = (e) => {
+  handleDecrementQty = (e, productId) => {
     e.stopPropagation();
-    let qtyOfProduct = document.querySelector('.num-of-items').textContent;
+    let qtyOfProduct = document.querySelector(`.${productId}`).textContent;
     qtyOfProduct = parseInt(qtyOfProduct);
-    qtyOfProduct = (qtyOfProduct <= 0) ? qtyOfProduct : qtyOfProduct - 1;
-    // Fix this bug later
-    document.querySelectorAll('.num-of-items').forEach((elem) => elem.textContent = qtyOfProduct);
+    qtyOfProduct = (qtyOfProduct === 0) ? qtyOfProduct : qtyOfProduct - 1;
+    document.querySelector(`.${productId}`).textContent = qtyOfProduct;
     calculateTotalPrice();
   }
 }
 
 const displayOrder = (cart) => {
-  orderDetails.innerHTML = '';
-  cart.forEach((item) => {
-    const { productImg, productDetails } = new Order(item);
-
-    if (total) {
-      orderDetails.append(productImg, productDetails);
+  orderDetailsElem.innerHTML = ''; 
+  if(cart.length > 0) {
+    if(orderDetailsElem) {
+      cart.forEach((item) => {
+        const { productImg, productDetails } = new Order(item);        
+        if (totalElem) {
+          orderDetailsElem.append(productImg, productDetails);
+        }
+      });
     }
-  });
-  calculateTotalPrice();
+    calculateTotalPrice();    
+  }else {
+    const checkoutBtn = document.querySelector('#checkout');
+    checkoutBtn.style.display = 'none';
+    document.querySelector('.no-item-msg').classList.remove('d-none');
+  }
+
 };
 
 const updateProductQty = (qty) => {
   let userCart = localStorage.getItem('userCart');
   userCart = JSON.parse(userCart);
   userCart = userCart.map((item) => {
-    item.quantity = qty
+    item.quantity = qty;
     return item;
   });
   userCartCopy = [...userCart];
   localStorage.setItem('userCart', JSON.stringify(userCart));
-}
-
-const calculateTotalPrice = () => {
-  document.querySelector('.total-price').innerHTML = '';
-  let totalPrice = 0;
-  if (userCartCopy.length === 1) {
-    let priceOfItem = document.querySelector('.price').innerText;
-    priceOfItem = parseInt(priceOfItem.replace('$', ''));
-    let qty = document.querySelector('.num-of-items').innerText;
-    qty = parseInt(qty);
-    totalPrice = priceOfItem * qty;
-  } else if (userCartCopy.length > 1) {
-    let pricesOfItems = document.querySelectorAll('.price');
-    pricesOfItems = Array
-      .from(pricesOfItems)
-      .map((elem) => parseInt(elem.innerText.replace('$', '')));
-
-    let qty = document.querySelectorAll('.num-of-items');
-    qty = Array
-      .from(qty)
-      .map((elem) => parseInt(elem.innerText.replace('$', '')));
-
-    for (let i = 0; i < pricesOfItems.length && i < qty.length; i += 1) {
-      totalPrice += pricesOfItems[i] * qty[i];
-    }
-  } else {
-    totalPrice = 0.00;
-  }
-  document.querySelector('.total-price').textContent = `$${totalPrice}.00`;
 };
 
-const handlePageSwitch = (currWindow, newWindow) => {
-  console.log('clicked')
-  const url = window.location.href.replace(currWindow, newWindow);
+const calculateTotalPrice = () => {
+  const totalPriceElem = document.querySelector('.total-price');
+  if(totalPriceElem) {
+    totalPriceElem.innerHTML = '';
+    let totalPrice = 0;
+    if (userCartCopy.length === 1) {
+      let priceOfItem = document.querySelector('.price').innerText;
+      priceOfItem = parseInt(priceOfItem.replace('$', ''));
+      let qty = document.querySelector('.num-of-items').innerText;
+      qty = parseInt(qty);
+      totalPrice = priceOfItem * qty;
+    } else if (userCartCopy.length > 1) {
+      let pricesOfItems = document.querySelectorAll('.price');
+      pricesOfItems = Array
+        .from(pricesOfItems)
+        .map((elem) => parseInt(elem.innerText.replace('$', '')));
+  
+      let qty = document.querySelectorAll('.num-of-items');
+      qty = Array
+        .from(qty)
+        .map((elem) => parseInt(elem.innerText.replace('$', '')));
+  
+      for (let i = 0; i < pricesOfItems.length && i < qty.length; i += 1) {
+        totalPrice += pricesOfItems[i] * qty[i];
+      }
+    } else {
+      totalPrice = 0.00;
+    }
+    totalPriceElem.textContent = `$${totalPrice}.00`;
+  }
+};
+
+const handlePageSwitch = (currentUrl, newUrl) => {
+  const url = window.location.href.replace(currentUrl, newUrl);
   window.location.href = url;
+};
+
+const activateProductRouter = () => {
+  const productCards = document.querySelectorAll('.card-img-top');
+  productCards.forEach((card) => card.addEventListener('click', (e) => {
+    const { id: cardId } = e.target;
+    handlePageSwitch('index.html', `product.html?productId=${cardId}`);    
+  }));
 }
 
 window.onload = () => {
   const cartBtn = document.querySelector('.modal-footer > .btn-primary');
-  if (addToCartIcons) {
-    addToCartIcons.forEach((cartIcon) => {
-      cartIcon.addEventListener('click', handleAddToCart);
-    });
+  const seeMoreBtn = document.getElementById('see-more');
+  const addToCartIcons = document.querySelectorAll('button[data-product]');
+  const productSection = document.querySelector('#product-section');
+
+  if(productSection) {
+    products.forEach((product) => {
+      const { card } = new ProductCard(product);
+      productSection.insertBefore(card, seeMoreBtn);
+    })
   }
 
   if (seeMoreBtn) {
     seeMoreBtn.addEventListener('click', handleSeeMore);
   }
 
-
-  if(cartBtn) {
-    cartBtn.addEventListener('click', () => 
-      handlePageSwitch('index.html', 'cart.html'));
+  if (cartBtn) {
+    cartBtn.addEventListener('click', () => handlePageSwitch('index.html', 'cart.html'));
   }
 
-  if(document.getElementById('buy-now')) {
-    document.getElementById('buy-now').addEventListener('click', () => {
+  if (document.getElementById('checkout')) {
+    document.getElementById('checkout').addEventListener('click', (e) => {
       handlePageSwitch('cart.html', 'checkout.html');
     });
   }
@@ -242,7 +238,7 @@ window.onload = () => {
     userCart = [];
     localStorage.setItem('userCart', JSON.stringify(userCart));
   }
-  
-  displayOrder(userCartCopy);
 
+  displayOrder(userCartCopy);
+  // activateProductRouter();
 };
