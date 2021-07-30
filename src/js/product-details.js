@@ -1,24 +1,19 @@
 const showProductDetails = (productId) => {
-  if(!productId) {
+  if (!productId) {
     return showNoProductFound();
   }
 
   const product = findProduct(productId);
 
-  if(product) {
+  if (product) {
     const { card } = new ProductCard(product);
-    document.querySelector('.section01').append(card);
-  }else {
-    showNoProductFound();
+    return card;
   }
+  return showNoProductFound();
 };
 
 // To get specific product by id
-findProduct = (productId) => {
-  return products.filter((product) => {
-    return product.id === productId;
-  })[0];
-};
+findProduct = (productId) => products.filter((product) => product.id === productId)[0];
 
 // Display no result found
 showNoProductFound = () => {
@@ -28,7 +23,8 @@ showNoProductFound = () => {
 };
 
 window.onload = () => {
-  const queryStr = location.search;
+  const queryStr = window.location.search;
   const productId = queryStr.slice(queryStr.length - 3);
-  showProductDetails(productId);
+  const elem = showProductDetails(productId);
+  document.querySelector('.section01').append(elem);
 };

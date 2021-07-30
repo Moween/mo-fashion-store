@@ -127,23 +127,24 @@ class Order {
 }
 
 const displayOrder = (cart) => {
-  orderDetailsElem.innerHTML = ''; 
-  if(cart.length > 0) {
-    if(orderDetailsElem) {
+  if (orderDetailsElem) {
+    orderDetailsElem.innerHTML = '';
+  }
+  if (cart.length > 0) {
+    if (orderDetailsElem) {
       cart.forEach((item) => {
-        const { productImg, productDetails } = new Order(item);        
+        const { productImg, productDetails } = new Order(item);
         if (totalElem) {
           orderDetailsElem.append(productImg, productDetails);
         }
       });
     }
-    calculateTotalPrice();    
-  }else {
+    calculateTotalPrice();
+  } else {
     const checkoutBtn = document.querySelector('#checkout');
     checkoutBtn.style.display = 'none';
     document.querySelector('.no-item-msg').classList.remove('d-none');
   }
-
 };
 
 const updateProductQty = (qty) => {
@@ -159,7 +160,7 @@ const updateProductQty = (qty) => {
 
 const calculateTotalPrice = () => {
   const totalPriceElem = document.querySelector('.total-price');
-  if(totalPriceElem) {
+  if (totalPriceElem) {
     totalPriceElem.innerHTML = '';
     let totalPrice = 0;
     if (userCartCopy.length === 1) {
@@ -173,12 +174,12 @@ const calculateTotalPrice = () => {
       pricesOfItems = Array
         .from(pricesOfItems)
         .map((elem) => parseInt(elem.innerText.replace('$', '')));
-  
+
       let qty = document.querySelectorAll('.num-of-items');
       qty = Array
         .from(qty)
         .map((elem) => parseInt(elem.innerText.replace('$', '')));
-  
+
       for (let i = 0; i < pricesOfItems.length && i < qty.length; i += 1) {
         totalPrice += pricesOfItems[i] * qty[i];
       }
@@ -194,25 +195,17 @@ const handlePageSwitch = (currentUrl, newUrl) => {
   window.location.href = url;
 };
 
-const activateProductRouter = () => {
-  const productCards = document.querySelectorAll('.card-img-top');
-  productCards.forEach((card) => card.addEventListener('click', (e) => {
-    const { id: cardId } = e.target;
-    handlePageSwitch('index.html', `product.html?productId=${cardId}`);    
-  }));
-}
-
 window.onload = () => {
   const cartBtn = document.querySelector('.modal-footer > .btn-primary');
   const seeMoreBtn = document.getElementById('see-more');
   const addToCartIcons = document.querySelectorAll('button[data-product]');
   const productSection = document.querySelector('#product-section');
 
-  if(productSection) {
+  if (productSection) {
     products.forEach((product) => {
       const { card } = new ProductCard(product);
       productSection.insertBefore(card, seeMoreBtn);
-    })
+    });
   }
 
   if (seeMoreBtn) {
@@ -224,7 +217,7 @@ window.onload = () => {
   }
 
   if (document.getElementById('checkout')) {
-    document.getElementById('checkout').addEventListener('click', (e) => {
+    document.getElementById('checkout').addEventListener('click', () => {
       handlePageSwitch('cart.html', 'checkout.html');
     });
   }
@@ -240,5 +233,4 @@ window.onload = () => {
   }
 
   displayOrder(userCartCopy);
-  // activateProductRouter();
 };
