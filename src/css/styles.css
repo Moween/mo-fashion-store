@@ -166,12 +166,12 @@ div.carousel-indicators {
 
 /* SECTION 3 */
 .section3 {
-  background-color: red;
+  background: linear-gradient(to right, lightpink, lightcoral);
   margin: 70px 0;
 }
 
 .lookbook-img {
-  visibility: hidden;
+  display: none;
 }
 
 .lookbook {
@@ -316,12 +316,11 @@ form {
 
   .section3 {
     width: 100%;
-    background: linear-gradient(to right, lightpink, lightcoral);
     padding: 20px 0;
   }
-  
+
   .lookbook-img {
-    visibility: visible;
+    display: block;
   }
 }
 
@@ -337,5 +336,4 @@ form {
   .navbar-nav > #nav-item-account {
     margin-left: auto;
   }
-
 }
