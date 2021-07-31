@@ -1,7 +1,7 @@
 class ProductCard {
   constructor(item) {
     this.card = document.createElement('div');
-    this.card.classList = 'col-sm-12 col-md-6 col-lg-3 p-0';
+    this.card.classList = 'col-sm-12 col-md-6 mt-3 col-lg-3 p-0';
     this.card.id = item.id;
     const itemCard = document.createElement('div');
     itemCard.classList = 'card w-90';
@@ -38,7 +38,7 @@ class ProductCard {
             />
           </div>
         </div>
-        <div class="discount-tag p-1 position-absolute top-0 end-0">-30%</div>
+        <div class="discount-tag p-1 position-absolute top-0 end-0">${this.calculateDiscount(item.price, item.prevPrice)}</div>
       </div>`;
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body';
@@ -49,13 +49,16 @@ class ProductCard {
           <p class="price">${item.price}</p>
           <p class="ms-2 prev-price"><s>${item.prevPrice}</s></p>
         </div>`;
+    const paragraph = document.createElement('p');
+    paragraph.className = 'd-none product-info';
+    paragraph.textContent = `${item.productInfo}`;
     const cartBtn = document.createElement('button');
     cartBtn.classList = 'icon position-absolute end-0 cart-icon fas fa-cart-plus';
     cartBtn.setAttribute('data-product', `${item.productName}`);
     cartBtn.setAttribute('data-bs-toggle', 'modal');
     cartBtn.setAttribute('data-bs-target', '#addedToCart');
     cartBtn.onclick = (e) => this.handleAddToCart(e, item);
-    cardBody.append(cartBtn);
+    cardBody.append(cartBtn, paragraph);
     itemCard.append(cardBody);
     this.card.append(itemCard);
     this.card.onclick = (e) => this.handleProductDetails(e, item.id);
@@ -64,6 +67,13 @@ class ProductCard {
   handleProductDetails = (e, productId) => {
     e.stopPropagation();
     handlePageSwitch('index.html', `product.html?productId=${productId}`);
+  }
+
+  calculateDiscount(productPrice, oldPrice) {
+    let price = Number(productPrice.replace('$', ''));
+    let prevPrice = Number(oldPrice.replace('$', ''));
+    const discount = parseInt((price - prevPrice )/ price  * 100) + '%'; 
+    return discount;
   }
 
   handleAddToCart = (e, product) => {
