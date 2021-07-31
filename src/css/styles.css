@@ -171,8 +171,7 @@ div.carousel-indicators {
 }
 
 .lookbook-img {
-  width: 100%;
-  display: block;
+  visibility: hidden;
 }
 
 .lookbook {
@@ -320,9 +319,9 @@ form {
     background: linear-gradient(to right, lightpink, lightcoral);
     padding: 20px 0;
   }
-
+  
   .lookbook-img {
-    display: none;
+    visibility: visible;
   }
 }
 
@@ -338,4 +337,5 @@ form {
   .navbar-nav > #nav-item-account {
     margin-left: auto;
   }
+
 }
