@@ -24,7 +24,7 @@ class Order {
       >`;
     this.productDetails = document.createElement('div');
     this.productDetails.id = 'order-details-container';
-    this.productDetails.classList = 'col-sm-12 col-md-8  p-0 mb-4 position-relative';
+    this.productDetails.classList = 'col-sm-12 col-md-9 p-0 mb-4 position-relative';
     this.productDetails.innerHTML = `
       <h6 class="product-brand">${product.brandName}</h6>
       <p>Product Code:<u>${product.id}</u></p>
