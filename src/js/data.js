@@ -207,3 +207,83 @@ const products =  [
     quantity: 1
   },
 ];
+
+const recommendedProducts = [
+  {
+    id:'P09',
+    productName: 'Boheimann Curls',
+    brandName: 'Sasha Hairs',
+    imageUrl: 'https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/B/N/177487_1597146297.jpg',
+    images: [
+      {
+        id: 'Boheimann Curls1',
+        src: 'https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/F/B/174703_1614697027.jpg',
+      },
+      {
+        id: 'Boheimann Curls2',
+        src: 'https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/B/N/177487_1597146297.jpg',
+      },
+      {
+        id: 'Boheimann Curls3',
+        src: 'https://i.pinimg.com/564x/f9/ea/0d/f9ea0dc9dc72aab3649f8bf6c7101757.jpg',
+      },
+    ],
+    carouselId: 'BoheimannCurls',
+    price: '$100.00',
+    prevPrice: '$130.00',
+    productInfo: 'The  is made of pure human hair',
+    quantity: 1,
+  },
+
+  {
+    id: 'P10',
+    productName: 'Sneakers',
+    brandName: 'Chinhu fashion',
+    imageUrl: 'https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/P/P/115077_1590003043.jpg',
+    images: [
+      {
+        id: 'sneakers1',
+        src: 'https://martinvalen.com/14099-large_default/men-s-stitch-zipper-sneakers-shoes-white.jpg',
+      },
+      {
+        id: 'sneakers2',
+        src: 'https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/P/P/115077_1590003043.jpg',
+      },
+      {
+        id: 'sneakers3',
+        src: 'https://images.yaoota.com/DlUQ7e5dT2qB-_AH4_yvvkx8w8A=/trim/yaootaweb-production-ng/media/crawledproductimages/9b4156185adbfe30b9519d5b61b692df02d6f18a.jpg',
+      }
+    ],
+    carouselId: 'Sneakers',
+    price: '$56.00',
+    prevPrice: '$100.00',
+    productInfo: 'A sneaky footwear that is comfortable on skin',
+    quantity: 1,
+  },
+
+  {
+    id: 'P11',
+    productName: 'Sunglasses',
+    brandName: 'Lorem collection',
+    imageUrl: 'https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Y/B/92910_1612560342.jpg',
+    images: [
+      {
+        id: 'Sunglasses1',
+        src: 'https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/Y/B/92910_1612560342.jpg',
+      },
+      {
+        id: 'Sunglasses2',
+        src:'https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/U/J/61668_1594899717.jpg'
+      },
+      {
+        id: 'Sunglasses3',
+        src:'https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/F/o/Foldable-Wayfarer---Black-3985654.jpg'
+      }
+    ],
+    carouselId: 'Sunglasses',
+    price: '$176.00',
+    prevPrice: '$350.00',
+    productInfo: 'Preventing harmful UV Rays',
+    quantity: 1,
+  },
+]
