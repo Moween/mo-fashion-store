@@ -119,16 +119,17 @@
     </nav>
   </header>
   <main>
-    <div class="container overflow-hidden">
+    <div class="container limited overflow-hidden">
       <h1 class="px-4 py-4 pb-0">Checkout</h1>
       <div class="row gx-5">
-        <div class="col-sm-12 col-md-6 br-bottom info">
+        <div class="col-sm-12 col-md-6 info">
           <p class="paragrph01">
             To purchase product(s) must fill in the data fields.
             Please fill them carefully. Thank you.
           </p>
+          <hr>
         </div>
-        <div class="col-sm-12 col-md-6 br-bottom p-4">
+        <div class="col-sm-12 col-md-6 p-4">
           <p class="mb-0 pb-0">Have a promo or gift-card?</p>
           <div class="dropdown">
             <p 
@@ -149,11 +150,12 @@
               </div>
             </ul>
           </div>
+          <hr>
         </div>
       </div>
       <div class="row">
         <section class="col-sm-12 form-group col-md-6 p-4 br-bottom">
-          <form class="row g-3 needs-validation" novalidate>
+          <form action="paymentForm" class="row g-3 needs-validation" novalidate>
             <h2 id="billing-details">Billing Details</h2>
             <div class="col-md-6 ps-0">
               <label for="validationCustom01" class="form-label">First name</label>
@@ -168,6 +170,10 @@
               <div class="valid-feedback">
                 Looks good!
               </div>
+            </div>
+            <div class="ps-0">
+              <label for="e-mail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="e-mail" placeholder="name@example.com">
             </div>
             <div class="col-md-8 ps-0">
               <label for="tel" class="form-label">Phone</label>
@@ -237,10 +243,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 ps-0
-            
-            ">
-              <button class="btn btn-primary" type="submit">Submit form</button>
+            <div class="col-12 ps-0">
+              <button class="btn btn-primary" type="submit">Pay with PayStack</button>
             </div>
           </form>
         </section>
