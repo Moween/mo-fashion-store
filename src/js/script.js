@@ -4,14 +4,6 @@ const totalElem = document.querySelector('.total');
 // Local Storage Copy
 let userCartCopy = [];
 
-const handleSeeMore = (e) => {
-  e.preventDefault();
-  const btn = e.target;
-  const secondRow = document.querySelector('#xtra-product-display');
-  secondRow.classList.toggle('d-md-flex');
-  btn.innerHTML = (btn.innerHTML === 'See More') ? 'See Less' : 'See More';
-};
-
 const saveToLocalStorage = (item) => {
   let userCart = localStorage.getItem('userCart');
   userCart = JSON.parse(userCart);
@@ -219,19 +211,14 @@ const updateCartBadge = () => {
 
 window.onload = () => {
   const cartBtn = document.querySelector('.modal-footer > .btn-primary');
-  const seeMoreBtn = document.getElementById('see-more');
   const addToCartIcons = document.querySelectorAll('button[data-product]');
   const productSection = document.querySelector('#product-section');
 
   if (productSection) {
     products.forEach((product) => {
       const { card } = new ProductCard(product);
-      productSection.insertBefore(card, seeMoreBtn);
+      productSection.append(card);
     });
-  }
-
-  if (seeMoreBtn) {
-    seeMoreBtn.addEventListener('click', handleSeeMore);
   }
 
   if (cartBtn) {
