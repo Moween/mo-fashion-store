@@ -98,7 +98,7 @@ class ProductInfo {
     checkoutBtn.onclick = (e) => handlePageSwitch('product.html', 'checkout.html');
     checkoutBtn.textContent = 'Buy Now';
     checkoutBtn.style.fontWeight = 'bold';
-    checkoutBtn.classList = 'btn btn-primary btn-sm';
+    checkoutBtn.classList = 'btn btn-primary btn-sm  mt-0';
     divElem2.append(this.cartBtn, checkoutBtn);
     this.divElem1.append(imgContainer, divElem2);
   }
