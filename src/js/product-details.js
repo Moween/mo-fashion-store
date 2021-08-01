@@ -89,12 +89,17 @@ class ProductInfo {
       </div>`
     this.cartBtn = document.createElement('button');
     this.cartBtn.textContent = '  Add to Cart'
-    this.cartBtn.classList = 'btn btn-primary cart-icon fas fa-cart-plus';
+    this.cartBtn.classList = 'btn btn-primary me-2 cart-icon fas fa-cart-plus';
     this.cartBtn.setAttribute('data-product', `${product.productName}`);
     this.cartBtn.setAttribute('data-bs-toggle', 'modal');
     this.cartBtn.setAttribute('data-bs-target', '#addedToCart');
     this.cartBtn.onclick = (e) => this.handleAddToCart(e, product)
-    divElem2.append(this.cartBtn);
+    const checkoutBtn = document.createElement('button');
+    checkoutBtn.onclick = (e) => handlePageSwitch('product.html', 'checkout.html');
+    checkoutBtn.textContent = 'Buy Now';
+    checkoutBtn.style.fontWeight = 'bold';
+    checkoutBtn.classList = 'btn btn-primary btn-sm';
+    divElem2.append(this.cartBtn, checkoutBtn);
     this.divElem1.append(imgContainer, divElem2);
   }
 
