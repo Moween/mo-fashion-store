@@ -71,7 +71,7 @@ class ProductInfo {
         Brand:
         <span class="fs-6">${product.brandName}</span>
         </p>
-        <p class='d-flex justify-content-sm-center justify-content-md-start'>
+        <p class='d-flex justify-content-center justify-content-md-start'>
         <i class="fas fa-star gold-star"></i>
         <i class="fas fa-star gold-star"></i>
         <i class="fas fa-star gold-star"></i>
@@ -83,8 +83,9 @@ class ProductInfo {
         <p class="price">${product.price}</p>
         <p class="prev-price">
           <s>${product.prevPrice}</s>
-          <span class="discount ms-1">${this.calculateDiscount()}</span>
-        </p>    
+          <span class="discount ms-1">${this.calculateDiscount(product)}</span>
+        </p> 
+        <p></   
       </div>`
     this.cartBtn = document.createElement('button');
     this.cartBtn.textContent = '  Add to Cart'
@@ -102,12 +103,13 @@ class ProductInfo {
     return Math.floor(Math.random() * (10000 - 500 + 1) )+ 500;
   }
 
-  calculateDiscount() {
-    let price = document.querySelector('.price').textContent;
+  // Calculate price discount
+  calculateDiscount(product) {
+    let { price } = product;
     price = Number(price.replace('$', ''));
-    let prevPrice = document.querySelector('.prev-price').textContent;
+    let { prevPrice } = product;
     prevPrice = Number(prevPrice.replace('$', ''));
-    const discount = parseInt(price - prevPrice / price  * 100) + '%'; 
+    const discount = parseInt((price - prevPrice ) / price  * 100) + '%'; 
     return discount;
   }
 
@@ -116,8 +118,7 @@ class ProductInfo {
     e.stopPropagation();
     const { target: btn } = e;
     const cardContainer = btn.parentNode;
-    const imageSlider = cardContainer.offsetParent.childNodes[1].children[1];
-    console.log(e)
+    const imageSlider = cardContainer.previousElementSibling.lastChild.children[1]
     const image = imageSlider.querySelector('.active');
     product.id = `P${Date.now()}`;
     product.imageUrl = image.children[0].currentSrc;
@@ -132,4 +133,12 @@ window.onload = () => {
   const productId = queryStr.slice(queryStr.length - 3);
   const elem = showProductDetails(productId);
   document.querySelector('.section01').append(elem);
+  
+  const showRecommendedItems = () => {
+    recommendedProducts.forEach((product) => {
+      const { card } = new ProductCard(product);
+      document.querySelector('.section2 > .row').append(card);
+    })
+  }
+  showRecommendedItems();
 };
