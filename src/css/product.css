@@ -1,11 +1,19 @@
 @import url('./cart.css');
 
 #side-nav {
-  height: 100vh;
+  padding-top: 30px;
+
 }
 
 #side-nav ul {
   list-style-type: none;
+  padding: 0;
+}
+
+#side-nav > ul > li {
+  border: 1px dashed grey;
+  padding: 20px 5px;
+  margin-bottom: 20px;
 }
 
 ul > li > a {
@@ -20,8 +28,22 @@ ul > li > a {
   padding: 3px;
 }
 
+.gold-star {
+  color: #f6b01e;
+}
+
 @media screen and (min-width: 768px) {
   h3 {
     font-size: 1.35rem;
+  }
+
+  .section2 > .row {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .section2 > .row > div {
+    width: 33.33%;
   }
 }
