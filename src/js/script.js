@@ -128,7 +128,7 @@ const displayOrder = (cart) => {
     if (orderDetailsElem) {
       cart.forEach((item) => {
         const { productImg, productDetails } = new Order(item);
-        
+
         if (totalElem) {
           orderDetailsElem.append(productImg, productDetails);
         }
@@ -136,7 +136,7 @@ const displayOrder = (cart) => {
     }
   } else {
     const checkoutBtn = document.querySelector('#checkout');
-    if(checkoutBtn) {
+    if (checkoutBtn) {
       checkoutBtn.style.display = 'none';
       document.querySelector('.no-item-msg').classList.remove('d-none');
     }
@@ -160,7 +160,7 @@ const updateProductQty = (qty) => {
 
 const calculateTotalPrice = () => {
   const totalPriceElem = document.querySelector('.total-price');
-  
+
   if (totalPriceElem) {
     totalPriceElem.innerHTML = '';
     let totalPrice = 0;
@@ -198,21 +198,48 @@ const handlePageSwitch = (currentUrl, newUrl) => {
 
 const updateCartBadge = () => {
   const badge = document.querySelector('.badge');
-  
-  if(badge) {
-    if(userCartCopy.length > 0) {
+
+  if (badge) {
+    if (userCartCopy.length > 0) {
       badge.textContent = userCartCopy.length;
-      badge.classList.remove('d-none');    
-    }else {
+      badge.classList.remove('d-none');
+    } else {
       badge.classList.add('d-none');
     }
   }
-}
+};
+
+const payWithPaystack = (e) => {
+  e.preventDefault();
+  let totalPrice = document.querySelector('.total-price').textContent;
+  console.log(totalPrice);
+  totalPrice = parseInt(totalPrice.replace('$', ''));
+
+  const handler = PaystackPop.setup({
+    key: 'pk_test_ba411fb245ceccfebd8f230905f2cd624ecbbc12', // Replace with your public key
+    email: document.getElementById('e-mail').value,
+    // the amount value is multiplied by 100 to convert to the lowest currency unit
+    amount: totalPrice * 100,
+    currency: 'USD', // Use GHS for Ghana Cedis or USD for US Dollars
+    ref: `${Math.floor((Math.random() * 1000000000) + 1)}`, // Replace with a reference you generated
+    callback(response) {
+      // this happens after the payment is completed successfully
+      const { reference } = response;
+      alert(`Payment complete! Reference: ${reference}`);
+      // Make an AJAX call to your server with the reference to verify the transaction
+    },
+    onClose() {
+      alert('Transaction was not completed, window closed.');
+    },
+  });
+
+  handler.openIframe();
+};
 
 window.onload = () => {
   const cartBtn = document.querySelector('.modal-footer > .btn-primary');
-  const addToCartIcons = document.querySelectorAll('button[data-product]');
   const productSection = document.querySelector('#product-section');
+  const paymentForm = document.getElementById('payment-form');
 
   if (productSection) {
     products.forEach((product) => {
@@ -239,7 +266,11 @@ window.onload = () => {
   } else {
     userCart = [];
     localStorage.setItem('userCart', JSON.stringify(userCart));
-  } 
+  }
+
+  if (paymentForm) {
+    paymentForm.addEventListener('submit', payWithPaystack, false);
+  }
 
   updateCartBadge();
   displayOrder(userCartCopy);
