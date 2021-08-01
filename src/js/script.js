@@ -24,7 +24,7 @@ class Order {
       >`;
     this.productDetails = document.createElement('div');
     this.productDetails.id = 'order-details-container';
-    this.productDetails.classList = 'col-sm-12 col-md-9 p-0 mb-4 position-relative';
+    this.productDetails.classList = 'col-sm-12 col-md-8 p-0 mb-4 position-relative';
     this.productDetails.innerHTML = `
       <h6 class="product-brand">${product.brandName}</h6>
       <p>Product Code:<u>${product.id}</u></p>
@@ -114,6 +114,7 @@ class Order {
     let qtyOfProduct = document.querySelector(`.${productId}`).textContent;
     qtyOfProduct = parseInt(qtyOfProduct);
     qtyOfProduct = (qtyOfProduct === 0) ? qtyOfProduct : qtyOfProduct - 1;
+    updateProductQty(qtyOfProduct);
     document.querySelector(`.${productId}`).textContent = qtyOfProduct;
     calculateTotalPrice();
   }
@@ -179,7 +180,7 @@ const calculateTotalPrice = () => {
       let qty = document.querySelectorAll('.num-of-items');
       qty = Array
         .from(qty)
-        .map((elem) => parseInt(elem.innerText.replace('$', '')));
+        .map((elem) => parseInt(elem.innerText));
 
       for (let i = 0; i < pricesOfItems.length && i < qty.length; i += 1) {
         totalPrice += pricesOfItems[i] * qty[i];
@@ -223,16 +224,17 @@ const payWithPaystack = (e) => {
     currency: 'USD', // Use GHS for Ghana Cedis or USD for US Dollars
     ref: `${Math.floor((Math.random() * 1000000000) + 1)}`, // Replace with a reference you generated
     callback(response) {
-      // this happens after the payment is completed successfully
-      const { reference } = response;
-      alert(`Payment complete! Reference: ${reference}`);
+      // this happens after the payment is completed successfull
+      // We clear cart
+      localStorage.clear();
+      // Redirect page to index.html
+      handlePageSwitch('checkout.html', 'index.html');
       // Make an AJAX call to your server with the reference to verify the transaction
     },
     onClose() {
       alert('Transaction was not completed, window closed.');
     },
   });
-
   handler.openIframe();
 };
 
