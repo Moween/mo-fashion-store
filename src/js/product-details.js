@@ -66,10 +66,10 @@ class ProductInfo {
     divElem2.classList = 'card-body  pt-0 col-sm-12 col-md-6 text-md-start';
     divElem2.innerHTML = `
       <div>
-        <h2 class="brand fs-3 mt-1">${product.productName}</h2>
+        <h2 class="brand fs-4 mt-1">${product.productName}</h2>
         <p class="fs-5">
         Brand:
-        <span class="fs-6">${product.brandName}</span>
+        <span class="fs-7">${product.brandName}</span>
         </p>
         <p class='d-flex justify-content-center justify-content-md-start'>
         <i class="fas fa-star gold-star"></i>
