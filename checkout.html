@@ -155,18 +155,18 @@
       </div>
       <div class="row">
         <section class="col-sm-12 form-group col-md-6 p-4 br-bottom">
-          <form action="paymentForm" class="row g-3 needs-validation" novalidate>
+          <form action="paymentForm" id="payment-form" class="row g-3 needs-validation" validate>
             <h2 id="billing-details">Billing Details</h2>
             <div class="col-md-6 ps-0">
               <label for="validationCustom01" class="form-label">First name</label>
-              <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="Mark" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-6 ps-0">
               <label for="lastname" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastname" value="Otto" required>
+              <input type="text" class="form-control" id="lastname" placeholder="Otto" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -178,7 +178,7 @@
             <div class="col-md-8 ps-0">
               <label for="tel" class="form-label">Phone</label>
               <div class="input-group has-validation">
-                <input type="tel" class="form-control" value="+2348039291997" id="tel" aria-describedby="inputGroupPrepend" required>
+                <input type="tel" class="form-control" placeholder="+2348039291997" id="tel" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                   Please enter phone-number.
                 </div>
@@ -251,7 +251,7 @@
         <section class="col-sm-12 col-md-6">
           <section id="shipping" class="p-4 br-bottom">
             <h2>Shipping Details</h3>
-            <div class="form-check">
+              <div class="form-check">
               <input class="form-check-input" type="radio" name="shipping" id="free-shipping">
               <label class="form-check-label" for="free-shipping">
                 Free Shipping
@@ -285,7 +285,7 @@
               </label>
             </div>
           </section>
-          <section id="order" class="p-4">
+          <section id="order" class="p-4 pe-0">
             <h2>Your Order</h2>
             <div class="order-details pt-3 row br-bottom">              
             </div>
@@ -381,6 +381,7 @@
   </script>
   <script src="./src/js/data.js"></script>
   <script src="./src/js/cards.js"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script> 
   <script src="./src/js/script.js"></script>
 </body>
 </html>
