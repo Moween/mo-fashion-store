@@ -135,6 +135,8 @@ class ProductInfo {
 
 window.onload = () => {
   const queryStr = window.location.search;
+  
+  // To get each productid in the query str
   const productId = queryStr.slice(queryStr.length - 3);
   const elem = showProductDetails(productId);
   document.querySelector('.section01').append(elem);
