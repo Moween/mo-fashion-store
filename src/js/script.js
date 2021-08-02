@@ -213,7 +213,6 @@ const updateCartBadge = () => {
 const payWithPaystack = (e) => {
   e.preventDefault();
   let totalPrice = document.querySelector('.total-price').textContent;
-  console.log(totalPrice);
   totalPrice = parseInt(totalPrice.replace('$', ''));
 
   const handler = PaystackPop.setup({
