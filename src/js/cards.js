@@ -3,6 +3,7 @@ class ProductCard {
     this.card = document.createElement('div');
     this.card.classList = 'col-sm-12 col-md-6 mt-3 col-lg-3 p-0';
     this.card.id = item.id;
+    this.card.style.cursor = 'pointer';
     const itemCard = document.createElement('div');
     itemCard.classList = 'card w-90';
     itemCard.innerHTML = `
@@ -47,7 +48,7 @@ class ProductCard {
   calculateDiscount(productPrice, oldPrice) {
     let price = Number(productPrice.replace('$', ''));
     let prevPrice = Number(oldPrice.replace('$', ''));
-    const discount = parseInt((price - prevPrice )/ price  * 100) + '%'; 
+    const discount = parseInt((price - - prevPrice ) / prevPrice * 100) + '%'; 
     return discount;
   }
 

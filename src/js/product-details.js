@@ -66,7 +66,7 @@ class ProductInfo {
     divElem2.classList = 'card-body  pt-0 col-sm-12 col-md-6 text-md-start';
     divElem2.innerHTML = `
       <div>
-        <h2 class="brand fs-4 mt-1">${product.productName}</h2>
+        <h2 class="brand fs-4 mt-1 pt-2">${product.productName}</h2>
         <p class="fs-5">
         Brand:
         <span class="fs-7">${product.brandName}</span>
@@ -95,7 +95,7 @@ class ProductInfo {
     this.cartBtn.setAttribute('data-bs-target', '#addedToCart');
     this.cartBtn.onclick = (e) => this.handleAddToCart(e, product)
     const checkoutBtn = document.createElement('button');
-    checkoutBtn.onclick = (e) => handlePageSwitch('product.html', 'checkout.html');
+    checkoutBtn.onclick = (e) => this.handleBuyNow(e, product);
     checkoutBtn.textContent = 'Buy Now';
     checkoutBtn.style.fontWeight = 'bold';
     checkoutBtn.classList = 'btn btn-primary btn-sm  mt-0';
@@ -114,7 +114,7 @@ class ProductInfo {
     price = Number(price.replace('$', ''));
     let { prevPrice } = product;
     prevPrice = Number(prevPrice.replace('$', ''));
-    const discount = parseInt((price - prevPrice ) / price  * 100) + '%'; 
+    const discount = parseInt((price - prevPrice ) / prevPrice  * 100) + '%'; 
     return discount;
   }
 
@@ -131,11 +131,15 @@ class ProductInfo {
     updateCartBadge();
     displayOrder(userCartCopy);
   }
+
+  handleBuyNow = (e, product) => {
+    this.handleAddToCart(e, product);
+    handlePageSwitch('product.html', 'checkout.html');
+  }
 }
 
 window.onload = () => {
   const queryStr = window.location.search;
-  
   // To get each productid in the query str
   const productId = queryStr.slice(queryStr.length - 3);
   const elem = showProductDetails(productId);
