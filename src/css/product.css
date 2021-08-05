@@ -32,6 +32,14 @@ ul > li > a {
   color: #f6b01e;
 }
 
+.section2 {
+  margin-top: 15px;
+}
+
+.section2 > h3 {
+  font-weight: 700;
+}
+
 @media screen and (min-width: 768px) {
   h3 {
     font-size: 1.35rem;
