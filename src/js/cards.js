@@ -48,7 +48,7 @@ class ProductCard {
   calculateDiscount(productPrice, oldPrice) {
     let price = Number(productPrice.replace('$', ''));
     let prevPrice = Number(oldPrice.replace('$', ''));
-    const discount = parseInt((price - - prevPrice ) / prevPrice * 100) + '%'; 
+    const discount = parseInt((price - prevPrice ) / prevPrice * 100) + '%'; 
     return discount;
   }
 
