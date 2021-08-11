@@ -18,7 +18,7 @@ findProduct = (productId) => products.filter((product) => product.id === product
 // Display no result found
 showNoProductFound = () => {
   const p = document.createElement('p');
-  p.textContent = 'No result found';
+  p.textContent = 'No product found';
   document.querySelector('.section01').append(p);
 };
 
