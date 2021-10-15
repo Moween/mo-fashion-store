@@ -132,7 +132,7 @@ class ProductInfo {
 
   handleBuyNow = (e, product) => {
     this.handleAddToCart(e, product);
-    handlePageSwitch('product.html', 'checkout.html');
+    handlePageSwitch('checkout.html');
   }
 }
 

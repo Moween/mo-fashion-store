@@ -97,7 +97,7 @@ class Order {
 
   handleEdit = (e) => {
     e.stopPropagation();
-    handlePageSwitch('checkout.html', 'product.html');
+    handlePageSwitch('product.html');
   }
 
   handleIncrementQty = (e, productId) => {
@@ -227,7 +227,7 @@ const payWithPaystack = (e) => {
       // We clear cart
       localStorage.clear();
       // Redirect page to index.html
-      handlePageSwitch('checkout.html', 'index.html');
+      handlePageSwitch('index.html');
       // Make an AJAX call to your server with the reference to verify the transaction
     },
     onClose() {
@@ -250,12 +250,12 @@ window.onload = () => {
   }
 
   if (cartBtn) {
-    cartBtn.addEventListener('click', () => handlePageSwitch('index.html', 'cart.html'));
+    cartBtn.addEventListener('click', () => handlePageSwitch('cart.html'));
   }
 
   if (document.getElementById('checkout')) {
     document.getElementById('checkout').addEventListener('click', () => {
-      handlePageSwitch('cart.html', 'checkout.html');
+      handlePageSwitch('checkout.html');
     });
   }
 

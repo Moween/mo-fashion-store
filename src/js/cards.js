@@ -42,7 +42,7 @@ class ProductCard {
   handleProductDetails = (e, productId) => {
     e.stopPropagation();
     // Routes to a new page
-    handlePageSwitch('index.html', `product.html?productId=${productId}`);
+    handlePageSwitch(`product.html?productId=${productId}`);
   }
 
   calculateDiscount = (productPrice, oldPrice) => {
