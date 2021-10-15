@@ -192,8 +192,8 @@ const calculateTotalPrice = () => {
   }
 };
 
-const handlePageSwitch = (currentUrl, newUrl) => {
-  const url = window.location.href.replace(currentUrl, newUrl);
+const handlePageSwitch = (newUrl) => {
+  const url = window.location.pathname.replace(window.location.pathname, newUrl);
   window.location.href = url;
 };
 
