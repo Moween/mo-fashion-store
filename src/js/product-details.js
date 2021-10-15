@@ -25,7 +25,7 @@ showNoProductFound = () => {
 class ProductInfo {
   constructor(product) {
     this.divElem1 = document.createElement('div');
-    this.divElem1.classList = 'row'
+    this.divElem1.classList = 'row';
     const imgContainer = document.createElement('div');
     imgContainer.classList = 'p-0 col-sm-12 col-md-5';
     imgContainer.innerHTML = `
@@ -86,14 +86,14 @@ class ProductInfo {
           <span class="discount ms-1">${this.calculateDiscount(product)}</span>
         </p> 
         <p></   
-      </div>`
+      </div>`;
     this.cartBtn = document.createElement('button');
-    this.cartBtn.textContent = '  Add to Cart'
+    this.cartBtn.textContent = '  Add to Cart';
     this.cartBtn.classList = 'btn btn-primary me-2 cart-icon fas fa-cart-plus';
     this.cartBtn.setAttribute('data-product', `${product.productName}`);
     this.cartBtn.setAttribute('data-bs-toggle', 'modal');
     this.cartBtn.setAttribute('data-bs-target', '#addedToCart');
-    this.cartBtn.onclick = (e) => this.handleAddToCart(e, product)
+    this.cartBtn.onclick = (e) => this.handleAddToCart(e, product);
     const checkoutBtn = document.createElement('button');
     checkoutBtn.onclick = (e) => this.handleBuyNow(e, product);
     checkoutBtn.textContent = 'Buy Now';
@@ -103,18 +103,16 @@ class ProductInfo {
     this.divElem1.append(imgContainer, divElem2);
   }
 
-  //To get num random number of ratings
-  calculateNumOfRatings() {
-    return Math.floor(Math.random() * (10000 - 500 + 1) )+ 500;
-  }
+  // To get num; random number of ratings
+  calculateNumOfRatings = () => Math.floor(Math.random() * (10000 - 500 + 1)) + 500;
 
   // Calculate price discount
-  calculateDiscount(product) {
+  calculateDiscount = (product) => {
     let { price } = product;
     price = Number(price.replace('$', ''));
     let { prevPrice } = product;
     prevPrice = Number(prevPrice.replace('$', ''));
-    const discount = parseInt((price - prevPrice ) / prevPrice  * 100) + '%'; 
+    const discount = `${parseInt(((price - prevPrice) / prevPrice) * 100)}%`;
     return discount;
   }
 
@@ -123,7 +121,7 @@ class ProductInfo {
     e.stopPropagation();
     const { target: btn } = e;
     const cardContainer = btn.parentNode;
-    const imageSlider = cardContainer.previousElementSibling.lastChild.children[1]
+    const imageSlider = cardContainer.previousElementSibling.lastChild.children[1];
     const image = imageSlider.querySelector('.active');
     product.id = `P${Date.now()}`;
     product.imageUrl = image.children[0].currentSrc;
@@ -144,12 +142,12 @@ window.onload = () => {
   const productId = queryStr.slice(queryStr.length - 3);
   const elem = showProductDetails(productId);
   document.querySelector('.section01').append(elem);
-  
+
   const showRecommendedItems = () => {
     recommendedProducts.forEach((product) => {
       const { card } = new ProductCard(product);
       document.querySelector('.section2 > .row').append(card);
-    })
-  }
+    });
+  };
   showRecommendedItems();
 };

@@ -45,10 +45,10 @@ class ProductCard {
     handlePageSwitch('index.html', `product.html?productId=${productId}`);
   }
 
-  calculateDiscount(productPrice, oldPrice) {
-    let price = Number(productPrice.replace('$', ''));
-    let prevPrice = Number(oldPrice.replace('$', ''));
-    const discount = parseInt((price - prevPrice ) / prevPrice * 100) + '%'; 
+  calculateDiscount = (productPrice, oldPrice) => {
+    const price = Number(productPrice.replace('$', ''));
+    const prevPrice = Number(oldPrice.replace('$', ''));
+    const discount = `${parseInt(((price - prevPrice) / prevPrice) * 100)}%`;
     return discount;
   }
 
